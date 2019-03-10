@@ -2007,7 +2007,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffcb94;
+  background: #ffe0f4;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2376,14 +2376,6 @@ pre .javascript .function {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   color: #ccc;
-}
-.gt-header a,
-.gt-comments a,
-.gt-popup a {
-  border-bottom: none;
-}
-.gt-container .gt-popup .gt-action.is--active:before {
-  top: 0.7em;
 }
 .gt-header a,
 .gt-comments a,
@@ -3176,7 +3168,7 @@ h6,
 }
 .site-meta,
 .headband {
-  background: #00b3ac;
+  background: #20fefe;
 }
 .site-subtitle {
   font-family: Merienda;
