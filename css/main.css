@@ -2007,7 +2007,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b80a0a;
+  background: #ff056c;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3158,10 +3158,10 @@ h6,
   background-color: rgba(255,255,255,0.5) !important;
 }
 .header-inner {
-  background-color: rgba(255,255,255,0.9) !important;
+  background-color: rgba(0,0,0,0.9) !important;
 }
 .content-wrap {
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(0,0,0,0.8);
 }
 #sidebar > div > div.back-to-top.back-to-top-on {
   opacity: 0.8;
