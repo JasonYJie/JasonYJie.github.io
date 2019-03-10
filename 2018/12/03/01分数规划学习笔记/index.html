@@ -160,23 +160,25 @@
 
 
 
-  <meta name="description" content="JasonYJie&apos;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jason_Jie">
-<meta property="og:url" content="https://jasonyjie.github.io/index.html">
+  <meta name="description" content="问题 有 \(n\) 个物品，每个物品有两个属性 \(a_i\) 和 \(b_i\)，需要选出 \(k\) 个，设选出的编号集合是 \(S\) 最大化 \[\frac{\sum_{i\in S} a_i}{\sum_{i\in S} b_i}\] 保留一定精度">
+<meta name="keywords" content="01分数规划">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01分数规划学习笔记">
+<meta property="og:url" content="https://jasonyjie.github.io/2018/12/03/01分数规划学习笔记/index.html">
 <meta property="og:site_name" content="Jason_Jie">
-<meta property="og:description" content="JasonYJie&apos;s blog">
+<meta property="og:description" content="问题 有 \(n\) 个物品，每个物品有两个属性 \(a_i\) 和 \(b_i\)，需要选出 \(k\) 个，设选出的编号集合是 \(S\) 最大化 \[\frac{\sum_{i\in S} a_i}{\sum_{i\in S} b_i}\] 保留一定精度">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-01-14T05:25:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jason_Jie">
-<meta name="twitter:description" content="JasonYJie&apos;s blog">
+<meta name="twitter:title" content="01分数规划学习笔记">
+<meta name="twitter:description" content="问题 有 \(n\) 个物品，每个物品有两个属性 \(a_i\) 和 \(b_i\)，需要选出 \(k\) 个，设选出的编号集合是 \(S\) 最大化 \[\frac{\sum_{i\in S} a_i}{\sum_{i\in S} b_i}\] 保留一定精度">
 
 
 
 
 
 
-  <link rel="canonical" href="https://jasonyjie.github.io/">
+  <link rel="canonical" href="https://jasonyjie.github.io/2018/12/03/01分数规划学习笔记/">
 
 
 
@@ -186,7 +188,7 @@
   };
 </script>
 
-  <title>Jason_Jie</title>
+  <title>01分数规划学习笔记 | Jason_Jie</title>
   
 
 
@@ -234,8 +236,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -277,7 +278,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -436,9 +437,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -470,10 +471,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/03/01分数规划学习笔记/" class="post-title-link" itemprop="url">01分数规划学习笔记</a>
+          <h1 class="post-title" itemprop="name headline">01分数规划学习笔记
+
               
             
           </h1>
@@ -551,6 +550,13 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
           
 
@@ -569,22 +575,36 @@
       
 
       
-        
-          <h1 id="问题">问题</h1>
+        <h1 id="问题">问题</h1>
 <p>有 <span class="math inline">\(n\)</span> 个物品，每个物品有两个属性 <span class="math inline">\(a_i\)</span> 和 <span class="math inline">\(b_i\)</span>，需要选出 <span class="math inline">\(k\)</span> 个，设选出的编号集合是 <span class="math inline">\(S\)</span></p>
 <p>最大化</p>
 <p><span class="math display">\[\frac{\sum_{i\in S} a_i}{\sum_{i\in S} b_i}\]</span></p>
 <p>保留一定精度</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/12/03/01分数规划学习笔记/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+<a id="more"></a>
+<h1 id="二分">二分</h1>
+<p>这个问题是可以二分的，考虑二分一个答案 <span class="math inline">\(ans\)</span>，条件是</p>
+<p><span class="math display">\[\frac{\sum_{i\in S} a_i}{\sum_{i\in S} b_i} \ge ans\]</span></p>
+<p>可以转化为</p>
+<p><span class="math display">\[\sum_{i\in S} a_i-ans \sum_{i\in S} b_i \ge 0\]</span></p>
+<p>这样只需要按照 <span class="math inline">\(a_i-ans*b_i\)</span> 排序取最大的 <span class="math inline">\(k\)</span> 个判断即可</p>
+<p>直接使用 <code>sort()</code>，令 <span class="math inline">\(w\)</span> 表示 <span class="math inline">\(\frac{\text{值域}}{\text{精度}}\)</span>，复杂度 <span class="math inline">\(\mathcal O(n\log n\log w)\)</span></p>
+<p>用 <code>nth_element()</code>，复杂度 <span class="math inline">\(\mathcal O(n\log w)\)</span></p>
+<p>问题有其他变种，<del>大概挺simple</del>，二分基本上就好了</p>
+<h1 id="迭代">迭代</h1>
+<p>我不知道这复杂度对不对，好像正确性也不知道，<del>反正跑得快</del></p>
+<p>先令 <span class="math inline">\(ans=0\)</span>，每次用相同的方法，可以求出一个 <span class="math inline">\(\frac{\sum_{i\in S} a_i}{\sum_{i\in S} b_i}\)</span>，显然这也是一个合法的答案，并且肯定更优。</p>
+<p>一直迭代直到增加量很小时结束</p>
+<h1 id="例题">例题</h1>
+<p><a href="https://loj.ac/problem/149" target="_blank" rel="noopener">LOJ #149. 01分数规划</a></p>
+<p>模板</p>
+<p><del>迭代目前跑得最快</del></p>
+<p>二分的代码的写法大概是因为寻址不连续，没有写<code>struct</code>一起<code>nth_element()</code>快</p>
+<h2 id="代码">代码</h2>
+<h3 id="二分-1">二分</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctype.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> IN_LEN = <span class="number">1000000</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">char</span> buf[IN_LEN], *s, *t;</span><br><span class="line">	<span class="keyword">return</span> (s==t?t=(s=buf)+fread(buf,<span class="number">1</span>,IN_LEN,<span class="built_in">stdin</span>),(s==t?<span class="number">-1</span>:*s++):*s++);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span> &amp;<span class="title">x</span>) &#123;</span></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">bool</span> iosig;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">for</span> (iosig=<span class="literal">false</span>, c=read(); !<span class="built_in">isdigit</span>(c); c=read()) &#123;</span><br><span class="line">		<span class="keyword">if</span> (c == <span class="string">'-'</span>) iosig=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span> (c == <span class="number">-1</span>) <span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (x=<span class="number">0</span>; <span class="built_in">isdigit</span>(c); c=read()) x=((x+(x&lt;&lt;<span class="number">2</span>))&lt;&lt;<span class="number">1</span>)+(c^<span class="string">'0'</span>);</span><br><span class="line">	<span class="keyword">if</span> (iosig) x=-x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100005</span>;</span><br><span class="line"><span class="keyword">int</span> n, k, a[N], b[N], g[N];</span><br><span class="line"><span class="keyword">double</span> f[N];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123; <span class="keyword">return</span> f[x]&gt;f[y];&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">check</span><span class="params">(<span class="keyword">double</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i) f[i]=a[i]-b[i]*x, g[i]=i;</span><br><span class="line">	nth_element(g+<span class="number">1</span>, g+k+<span class="number">1</span>, g+n+<span class="number">1</span>, cmp);</span><br><span class="line">	ll sa=<span class="number">0</span>, sb=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=k; ++i) sa+=a[g[i]], sb+=b[g[i]];</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">double</span>)sa/sb;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	read(n), read(k);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i) read(a[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i) read(b[i]);</span><br><span class="line">	<span class="keyword">double</span> l=<span class="number">0</span>, r=<span class="number">1e6</span>, ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(r-l&gt;<span class="number">1e-7</span>)&#123;</span><br><span class="line">		<span class="keyword">double</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span>(check(mid)&gt;=mid) ans=mid, l=mid; <span class="keyword">else</span> r=mid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">printf</span>(<span class="string">"%.4f"</span>, ans), <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="迭代-1">迭代</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctype.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> IN_LEN = <span class="number">1000000</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">char</span> buf[IN_LEN], *s, *t;</span><br><span class="line">	<span class="keyword">return</span> (s==t?t=(s=buf)+fread(buf,<span class="number">1</span>,IN_LEN,<span class="built_in">stdin</span>),(s==t?<span class="number">-1</span>:*s++):*s++);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span> &amp;<span class="title">x</span>) &#123;</span></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">bool</span> iosig;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">for</span> (iosig=<span class="literal">false</span>, c=read(); !<span class="built_in">isdigit</span>(c); c=read()) &#123;</span><br><span class="line">		<span class="keyword">if</span> (c == <span class="string">'-'</span>) iosig=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span> (c == <span class="number">-1</span>) <span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (x=<span class="number">0</span>; <span class="built_in">isdigit</span>(c); c=read()) x=((x+(x&lt;&lt;<span class="number">2</span>))&lt;&lt;<span class="number">1</span>)+(c^<span class="string">'0'</span>);</span><br><span class="line">	<span class="keyword">if</span> (iosig) x=-x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100005</span>;</span><br><span class="line"><span class="keyword">int</span> n, k;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">item</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a, b;</span><br><span class="line">	<span class="keyword">double</span> f;</span><br><span class="line">	<span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> item &amp;rhs)<span class="keyword">const</span>&#123; <span class="keyword">return</span> f&gt;rhs.f;&#125;</span><br><span class="line">&#125; a[N];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">check</span><span class="params">(<span class="keyword">double</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i) a[i].f=a[i].a-a[i].b*x;</span><br><span class="line">	nth_element(a+<span class="number">1</span>, a+k+<span class="number">1</span>, a+n+<span class="number">1</span>);</span><br><span class="line">	ll sa=<span class="number">0</span>, sb=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=k; ++i) sa+=a[i].a, sb+=a[i].b;</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">double</span>)sa/sb;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	read(n), read(k);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i) read(a[i].a);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i) read(a[i].b);</span><br><span class="line">	ll sa=<span class="number">0</span>, sb=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=k; ++i) sa+=a[i].a, sb+=a[i].b;</span><br><span class="line">	<span class="keyword">double</span> ans=(<span class="keyword">double</span>)sa/sb, last;</span><br><span class="line">	<span class="keyword">do</span> ans=check(last=ans); <span class="keyword">while</span>(ans-last&gt;<span class="number">1e-6</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">printf</span>(<span class="string">"%.4f"</span>, ans), <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -600,19 +620,54 @@
       
     
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/mm_facetoface_collect_qrcode_1552042538756.png" alt="Jason_Jie WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/1552042551420.jpg" alt="Jason_Jie Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/01分数规划/" rel="tag"># 01分数规划</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -622,14 +677,19 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -649,8 +709,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -823,6 +892,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二分"><span class="nav-number">2.</span> <span class="nav-text">二分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#迭代"><span class="nav-number">3.</span> <span class="nav-text">迭代</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例题"><span class="nav-number">4.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">4.1.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二分-1"><span class="nav-number">4.1.1.</span> <span class="nav-text">二分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代-1"><span class="nav-number">4.1.2.</span> <span class="nav-text">迭代</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
 	   <div class="Hitokotoframe">
     <p style="margin:0px; padding:0px;"></p>
@@ -990,6 +1076,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -1005,6 +1095,37 @@
 
   
 
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '17af1c3632b7a790c5f9',
+    clientSecret: '4499e42911611c09c5a934c26a38deb8d19003de',
+    repo: 'jasonyjie.github.io',
+    owner: 'JasonYJie',
+    admin: ['JasonYJie'],
+    id: md5(location.pathname),
+    
+      language: 'en',
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+  
 
 
   
@@ -1340,12 +1461,6 @@
   
 
   
-  
-    
-      
-        
-      
-    
   
 
   

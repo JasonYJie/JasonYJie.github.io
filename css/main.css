@@ -567,7 +567,7 @@ pre code {
   text-shadow: none;
 }
 .highlight {
-  border-radius: 1px;
+  border-radius: 10px;
 }
 .highlight pre {
   border: none;
@@ -1823,57 +1823,6 @@ pre .javascript .function {
 .rtl.post-title {
   font-family: UKIJ Ekran;
 }
-.my_post_copyright {
-  width: 85%;
-  max-width: 45em;
-  margin: 2.8em auto 0;
-  padding: 0.5em 1em;
-  border: 1px solid #d3d3d3;
-  font-size: 0.93rem;
-  line-height: 1.6em;
-  word-break: break-all;
-  background: rgba(255,255,255,0.4);
-}
-.my_post_copyright p {
-  margin: 0;
-}
-.my_post_copyright span {
-  display: inline-block;
-  width: 5.2em;
-  color: #b5b5b5;
-  font-weight: bold;
-}
-.my_post_copyright .raw {
-  margin-left: 1em;
-  width: 5em;
-}
-.my_post_copyright a {
-  color: #808080;
-  border-bottom: 0;
-}
-.my_post_copyright a:hover {
-  color: #a3d2a3;
-  text-decoration: underline;
-}
-.my_post_copyright:hover .fa-clipboard {
-  color: #000;
-}
-.my_post_copyright .post-url:hover {
-  font-weight: normal;
-}
-.my_post_copyright .copy-path {
-  margin-left: 1em;
-  width: 1em;
-}
-@media (max-width: 767px) {
-  .my_post_copyright .copy-path {
-    display: none;
-  }
-}
-.my_post_copyright .copy-path:hover {
-  color: #808080;
-  cursor: pointer;
-}
 .sidebar {
   position: fixed;
   right: 0;
@@ -2058,7 +2007,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1b4450;
+  background: #c6322e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2427,6 +2376,14 @@ pre .javascript .function {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   color: #ccc;
+}
+.gt-header a,
+.gt-comments a,
+.gt-popup a {
+  border-bottom: none;
+}
+.gt-container .gt-popup .gt-action.is--active:before {
+  top: 0.7em;
 }
 .page-archive .archive-page-counter {
   position: relative;
@@ -3178,13 +3135,13 @@ h6,
   font-family: 'Lato', "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
 }
 .sidebar {
-  background-color: rgba(255,255,255,0.5) !important;
+  background-color: rgba(255,255,255,0.7) !important;
 }
 .sidebar-inner {
-  background-color: rgba(255,255,255,0.5) !important;
+  background-color: rgba(255,255,255,0.7) !important;
 }
 .affix {
-  background-color: rgba(255,255,255,0.5) !important;
+  background-color: rgba(255,255,255,0.7) !important;
 }
 .affix-top {
   background-color: rgba(255,255,255,0) !important;
@@ -3202,12 +3159,16 @@ h6,
   opacity: 0.8;
 }
 #sidebar > div > div.Hitokotoframe {
+/* margin: 8px -10px -20px; */
   margin: 8px -10px -20px;
   background-color: rgba(255,255,255,0.5);
   line-height: 1.4;
 }
 #sidebar > div > div.Hitokotoframe > div {
   padding: 20px 10px 0;
+}
+.sidebar-inner {
+  padding: 20px 10px 0px;
 }
 .site-meta,
 .headband {
