@@ -2007,7 +2007,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #384266;
+  background: #ffcb94;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3143,40 +3143,36 @@ h6,
   font-family: 'Lato', "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
 }
 .sidebar {
-  background-color: rgba(0,0,0,0.7) !important;
+  background-color: rgba(255,255,255,0.5) !important;
 }
 .sidebar-inner {
-  background-color: rgba(0,0,0,0.7) !important;
+  background-color: rgba(255,255,255,0.5) !important;
 }
 .affix {
-  background-color: rgba(0,0,0,0.7) !important;
+  background-color: rgba(255,255,255,0.5) !important;
 }
 .affix-top {
-  background-color: rgba(0,0,0,0) !important;
+  background-color: rgba(255,255,255,0) !important;
 }
 .affix-bottom {
-  background-color: rgba(0,0,0,0.5) !important;
+  background-color: rgba(255,255,255,0.5) !important;
 }
 .header-inner {
-  background-color: rgba(0,0,0,0.9) !important;
+  background-color: rgba(255,255,255,0.9) !important;
 }
 .content-wrap {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(255,255,255,0.8);
 }
 #sidebar > div > div.back-to-top.back-to-top-on {
   opacity: 0.8;
 }
 #sidebar > div > div.Hitokotoframe {
-/* margin: 8px -10px -20px; */
   margin: 8px -10px -20px;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(255,255,255,0.5);
   line-height: 1.4;
 }
 #sidebar > div > div.Hitokotoframe > div {
   padding: 20px 10px 0;
-}
-.sidebar-inner {
-  padding: 20px 10px 0px;
 }
 .site-meta,
 .headband {
