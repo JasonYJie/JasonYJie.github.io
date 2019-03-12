@@ -160,18 +160,18 @@
 
 
 
-  <meta name="description" content="#\(Codeforces 978 A\) 题解： 978A 题意： ​ 给定 \(n\) 个整数 ，要求输出数字种类，并且去除重复数字后输出，如果是重复的元素则以最后一次出现的次序完成输出。 ​ 思考： 数据范围 \(a_i\) 很小，只需要开一个 \(rub\) 就好了，记录当前数字是否被访问过，如果没有访问过，记录访问，然后用一个数组记录一下 最后倒序输出 12345678910111213">
+  <meta name="description" content="\(Codeforces 978 A\) 题解： 978A 题意： ​ 给定 \(n\) 个整数 ，要求输出数字种类，并且去除重复数字后输出，如果是重复的元素则以最后一次出现的次序完成输出。 ​">
 <meta name="keywords" content="Codeforces,题解,暴力">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces 978 A">
 <meta property="og:url" content="https://jasonyjie.github.io/2019/03/12/cf978a/index.html">
 <meta property="og:site_name" content="Jason_Jie">
-<meta property="og:description" content="#\(Codeforces 978 A\) 题解： 978A 题意： ​ 给定 \(n\) 个整数 ，要求输出数字种类，并且去除重复数字后输出，如果是重复的元素则以最后一次出现的次序完成输出。 ​ 思考： 数据范围 \(a_i\) 很小，只需要开一个 \(rub\) 就好了，记录当前数字是否被访问过，如果没有访问过，记录访问，然后用一个数组记录一下 最后倒序输出 12345678910111213">
+<meta property="og:description" content="\(Codeforces 978 A\) 题解： 978A 题意： ​ 给定 \(n\) 个整数 ，要求输出数字种类，并且去除重复数字后输出，如果是重复的元素则以最后一次出现的次序完成输出。 ​">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-12T05:29:38.411Z">
+<meta property="og:updated_time" content="2019-03-12T06:50:34.955Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 978 A">
-<meta name="twitter:description" content="#\(Codeforces 978 A\) 题解： 978A 题意： ​ 给定 \(n\) 个整数 ，要求输出数字种类，并且去除重复数字后输出，如果是重复的元素则以最后一次出现的次序完成输出。 ​ 思考： 数据范围 \(a_i\) 很小，只需要开一个 \(rub\) 就好了，记录当前数字是否被访问过，如果没有访问过，记录访问，然后用一个数组记录一下 最后倒序输出 12345678910111213">
+<meta name="twitter:description" content="\(Codeforces 978 A\) 题解： 978A 题意： ​ 给定 \(n\) 个整数 ，要求输出数字种类，并且去除重复数字后输出，如果是重复的元素则以最后一次出现的次序完成输出。 ​">
 
 
 
@@ -499,7 +499,7 @@
                 
               
 
-              <time title="Created: 2019-03-12 13:14:42 / Modified: 13:29:38" itemprop="dateCreated datePublished" datetime="2019-03-12T13:14:42+08:00">2019-03-12</time>
+              <time title="Created: 2019-03-12 13:14:42 / Modified: 14:50:34" itemprop="dateCreated datePublished" datetime="2019-03-12T13:14:42+08:00">2019-03-12</time>
             
 
             
@@ -577,9 +577,10 @@
       
 
       
-        <p>#<span class="math inline">\(Codeforces 978 A\)</span> 题解：</p>
+        <h1 id="codeforces-978-a-题解"><span class="math inline">\(Codeforces 978 A\)</span> 题解：</h1>
 <p><a href="http://codeforces.com/contest/978/problem/A" target="_blank" rel="noopener">978A</a></p>
-<p>题意： ​ 给定 <span class="math inline">\(n\)</span> 个整数 ，要求输出数字种类，并且去除重复数字后输出，如果是重复的元素则以最后一次出现的次序完成输出。 ​ 思考： 数据范围 <span class="math inline">\(a_i\)</span> 很小，只需要开一个 <span class="math inline">\(rub\)</span> 就好了，记录当前数字是否被访问过，如果没有访问过，记录访问，然后用一个数组记录一下 最后倒序输出</p>
+<p>题意： ​ 给定 <span class="math inline">\(n\)</span> 个整数 ，要求输出数字种类，并且去除重复数字后输出，如果是重复的元素则以最后一次出现的次序完成输出。 ​ <a id="more"></a></p>
+<p>思考： 数据范围 <span class="math inline">\(a_i\)</span> 很小，只需要开一个 <span class="math inline">\(rub\)</span> 就好了，记录当前数字是否被访问过，如果没有访问过，记录访问，然后用一个数组记录一下 最后倒序输出</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maX(a,b) (a&gt;b?a:b)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> miN(a,b) (a&lt;b?a:b)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1010</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> x=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">bool</span> f=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">char</span> ch=getchar();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch))</span><br><span class="line">	&#123;</span><br><span class="line">		f^=!(ch^<span class="string">'-'</span>);</span><br><span class="line">		ch=getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch))</span><br><span class="line">	&#123;</span><br><span class="line">		x=((x+(x&lt;&lt;<span class="number">2</span>))&lt;&lt;<span class="number">1</span>)+(ch^<span class="string">'0'</span>);</span><br><span class="line">		ch=getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> f?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> sc[<span class="number">30</span>]=&#123;<span class="number">0</span>&#125;,tot=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		sc[++tot]=x%<span class="number">10</span>;</span><br><span class="line">		x/=<span class="number">10</span>;</span><br><span class="line">	&#125;<span class="keyword">while</span>(x);</span><br><span class="line">	<span class="keyword">while</span>(tot) <span class="built_in">putchar</span>(<span class="string">'0'</span>+sc[tot--]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n,maxn;</span><br><span class="line"><span class="keyword">int</span> a[N],rub[N],c[N],cnt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> c,<span class="keyword">int</span> d)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> c&gt;d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n=read();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		a[i]=read(),maxn=max(maxn,a[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">		<span class="keyword">if</span>(!rub[a[i]])</span><br><span class="line">		&#123;	</span><br><span class="line">			rub[a[i]]=<span class="number">1</span>;</span><br><span class="line">			c[++cnt]=a[i];</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,cnt);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=cnt;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,c[i]);<span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>拓展： 考虑范围很大怎么做 其实也很简单 离散一下数字或者使用 <span class="math inline">\(map\)</span> 然后就可以按照之前的方法进行处理了</p>
 
@@ -703,8 +704,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -904,6 +914,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#codeforces-978-a-题解"><span class="nav-number">1.</span> <span class="nav-text">\(Codeforces 978 A\) 题解：</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
 	   <div class="Hitokotoframe">

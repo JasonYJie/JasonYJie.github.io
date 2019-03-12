@@ -160,18 +160,18 @@
 
 
 
-  <meta name="description" content="#\(Codeforces 978D\) 题解： 978D 题意： ​ ​ 给 \(n\) 个数字 每个数字可以 \(+1\) \(-1\) 或者 不变，问最少改变几位数字，可以使得 这个 这个序列是单调的，递增或递减或不变 ​ 思考： 读入序列以后，我们考虑最后既然是等差数列，那么公差一定是不变的，也就是可以是 \(a_i - a_{i-1}\) 所以我们只要枚举前两个的改变方式，一共有 \(3">
+  <meta name="description" content="\(Codeforces 978D\) 题解： 978D 题意： ​ ​ 给 \(n\) 个数字 每个数字可以 \(+1\) \(-1\) 或者 不变，问最少改变几位数字，可以使得 这个 这个序列是单调的，递增或递减或不变 ​">
 <meta name="keywords" content="Codeforces,题解,思维,数学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces 978 D">
 <meta property="og:url" content="https://jasonyjie.github.io/2019/03/12/cf978d/index.html">
 <meta property="og:site_name" content="Jason_Jie">
-<meta property="og:description" content="#\(Codeforces 978D\) 题解： 978D 题意： ​ ​ 给 \(n\) 个数字 每个数字可以 \(+1\) \(-1\) 或者 不变，问最少改变几位数字，可以使得 这个 这个序列是单调的，递增或递减或不变 ​ 思考： 读入序列以后，我们考虑最后既然是等差数列，那么公差一定是不变的，也就是可以是 \(a_i - a_{i-1}\) 所以我们只要枚举前两个的改变方式，一共有 \(3">
+<meta property="og:description" content="\(Codeforces 978D\) 题解： 978D 题意： ​ ​ 给 \(n\) 个数字 每个数字可以 \(+1\) \(-1\) 或者 不变，问最少改变几位数字，可以使得 这个 这个序列是单调的，递增或递减或不变 ​">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-12T06:47:25.179Z">
+<meta property="og:updated_time" content="2019-03-12T06:50:05.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 978 D">
-<meta name="twitter:description" content="#\(Codeforces 978D\) 题解： 978D 题意： ​ ​ 给 \(n\) 个数字 每个数字可以 \(+1\) \(-1\) 或者 不变，问最少改变几位数字，可以使得 这个 这个序列是单调的，递增或递减或不变 ​ 思考： 读入序列以后，我们考虑最后既然是等差数列，那么公差一定是不变的，也就是可以是 \(a_i - a_{i-1}\) 所以我们只要枚举前两个的改变方式，一共有 \(3">
+<meta name="twitter:description" content="\(Codeforces 978D\) 题解： 978D 题意： ​ ​ 给 \(n\) 个数字 每个数字可以 \(+1\) \(-1\) 或者 不变，问最少改变几位数字，可以使得 这个 这个序列是单调的，递增或递减或不变 ​">
 
 
 
@@ -499,7 +499,7 @@
                 
               
 
-              <time title="Created: 2019-03-12 13:14:42 / Modified: 14:47:25" itemprop="dateCreated datePublished" datetime="2019-03-12T13:14:42+08:00">2019-03-12</time>
+              <time title="Created: 2019-03-12 13:14:42 / Modified: 14:50:05" itemprop="dateCreated datePublished" datetime="2019-03-12T13:14:42+08:00">2019-03-12</time>
             
 
             
@@ -577,10 +577,11 @@
       
 
       
-        <p>#<span class="math inline">\(Codeforces 978D\)</span> 题解：</p>
+        <h1 id="codeforces-978d-题解"><span class="math inline">\(Codeforces 978D\)</span> 题解：</h1>
 <p><a href="http://codeforces.com/contest/978/problem/D" target="_blank" rel="noopener">978D</a></p>
 <p>题意： ​ ​</p>
 <p>给 <span class="math inline">\(n\)</span> 个数字 每个数字可以 <span class="math inline">\(+1\)</span> <span class="math inline">\(-1\)</span> 或者 不变，问最少改变几位数字，可以使得 这个 这个序列是单调的，递增或递减或不变 ​</p>
+<a id="more"></a>
 <p>思考：</p>
 <p>读入序列以后，我们考虑最后既然是等差数列，那么公差一定是不变的，也就是可以是 <span class="math inline">\(a_i - a_{i-1}\)</span> 所以我们只要枚举前两个的改变方式，一共有 <span class="math inline">\(3*3=9\)</span> 种，然后枚举完公差以后我们可以推出来完整数组，然后和原数组比较，更新答案</p>
 <p>一个小细节：就是会出现无法改变成要求的数组，那么我们需要记一下一共无法改变多少次，如果是 <span class="math inline">\(9\)</span>次的话，输出 <span class="math inline">\(-1\)</span></p>
@@ -712,8 +713,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -913,6 +923,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#codeforces-978d-题解"><span class="nav-number">1.</span> <span class="nav-text">\(Codeforces 978D\) 题解：</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
 	   <div class="Hitokotoframe">
