@@ -95,24 +95,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Codeforces 978 E]]></title>
-    <url>%2F2019%2F03%2F12%2Fcf978E%2F</url>
-    <content type="text"><![CDATA[\(Codeforces 978E\) 题解： 978E 题意： ​ ​ ​共 \(N\) 站，汽车每站变化 \(a_i\) 人。问刚开始汽车上人数有多少种可能？ ​ 思考： 因为是变化值，所以相当于差分了一下，先做一遍前缀和，变成每个车站当前有多少人。然后排序前缀和数组。\(- sum_1\) 就是最少的人数边界 \(w - sum_n\) 就是最多的人数边界 最 \(ans\) 就是两者相减 注意： 做处理的时候有可能是单调，也就是说一直下车或者一直上车 最小边界要做处理： \(minn=max(-sum_i , 0)\) 最大边界要做处理： \(maxn=minn(w,w-sum[n])\) 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 1010using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,x,y,ans,w;int a[N],b[N];int main()&#123; n=read(); w=read(); for(register int i=1;i&lt;=n;i++) a[i]=read(),b[i]=b[i-1]+a[i]; sort(b+1,b+n+1); x=w-b[n];x=min(w,x); y=-b[1];y=max(0,y); if(x-y+1&lt;=0) puts("0"); else printf("%d\n",x-y+1); return 0;&#125;]]></content>
-      <categories>
-        <category>Contest</category>
-        <category>Codeforces</category>
-        <category>978</category>
-      </categories>
-      <tags>
-        <tag>Codeforces</tag>
-        <tag>题解</tag>
-        <tag>lv0</tag>
-        <tag>排序</tag>
-        <tag>思维</tag>
-        <tag>前缀和</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Codeforces 977 A]]></title>
     <url>%2F2019%2F03%2F12%2Fcf977a%2F</url>
     <content type="text"><![CDATA[\(Codeforces 977 A\) 题解： 977A 题意： 给定一个整数 \(n\) 然后给定一个操作次数 \(k\) ,要求输出最后根据操作的数字 操作如下： 当最后一位不为\(0\) 则减 \(1\) 否则除 \(10\) ​ 思考： 直接按照题意模拟就好了，没什么好说的 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N using namespace std;inline ll read()&#123; register ll x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;ll n,k;int main()&#123; n=read(); k=read(); for(register int i=1;i&lt;=k;i++) &#123; if(n%10!=0) n--; else n/=10; &#125; printf("%lld\n",n); return 0;&#125;]]></content>
@@ -126,6 +108,24 @@
         <tag>题解</tag>
         <tag>模拟</tag>
         <tag>lv0</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Codeforces 978 G]]></title>
+    <url>%2F2019%2F03%2F12%2Fcf978g%2F</url>
+    <content type="text"><![CDATA[\(Codeforces 978 G\) 题解： 978G 题意： ​共有 \(n\) 天，\(m\) 场考试编号 \(1～m\) ，每场考试给出 \(s\) 题库发布的时间（即代表从此时起可以开始复习这门科目） \(d\) 这门科目考试的时间 \(t\) 需要复习的时间。 现在，每天你可以选择复习，或者休息，只能选其中一样！如果是考试的时间，则必须去考试！ 问，你是否可以复习完所有科目并通过考试 如果可以，输出安排表，\(1～m\) 代表复习功课，\(0\) 表示休息，\(m+1\) 表示考试。 如果不能，输出 \(-1\)。 ​ 思考： 显然是一道贪心，考试时间越早的我们要越早复习完。 所以开一个 \(struct\) 记录发布时间，考试时间，复习时间，和考试编号 然后对于一天我们就暴力去判断 考试的天必须考试 剩下的根据题目限制判断一下复习还是休息 最后，如果有的科目没有复习完则不合法，否则允许 注意：题目没有要求连续复习，所以允许隔天复习！！！ 不知道为什么我的代码\(struct\) 会导致hexo 报错，所以代码有 \(bug\)，谅解！ 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a.b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 110using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,m,flag;structt st&#123; int id,s,e,t;&#125;a[N];int ans[N];inline bool cmp(st x,st y)&#123; return x.t&lt;y.t;&#125;int main()&#123; n=read(); m=read(); for(register int i=1;i&lt;=m;i++) &#123; a[i].id=i; a[i].s=read(); a[i].t=read(); a[i].e=read(); ans[a[i].t]=m+1; &#125; sort(a+1,a+m+1,cmp); for(register int i=1;i&lt;=n;i++) &#123; if(ans[i]) continue; flag=0; for(register int j=1;j&lt;=m;j++) &#123; if((a[j].e)&amp;&amp;(a[j].s&lt;=i)&amp;&amp;(a[j].t&gt;i)) &#123; ans[i]=a[j].id; a[j].e--; flag=1; &#125; if(flag) break; &#125; &#125; for(register int j=1;j&lt;=m;j++) if(a[j].e) &#123; puts("-1"); return 0; &#125; for(register int i=1;i&lt;=n;i++) printf("%d ",ans[i]);puts(""); return 0;&#125;]]></content>
+      <categories>
+        <category>Contest</category>
+        <category>Codeforces</category>
+        <category>978</category>
+      </categories>
+      <tags>
+        <tag>Codeforces</tag>
+        <tag>题解</tag>
+        <tag>模拟</tag>
+        <tag>lv0</tag>
+        <tag>暴力</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -213,9 +213,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Codeforces 978 G]]></title>
-    <url>%2F2019%2F03%2F12%2Fcf978g%2F</url>
-    <content type="text"><![CDATA[\(Codeforces 978 G\) 题解： 978G 题意： ​共有 \(n\) 天，\(m\) 场考试编号 \(1～m\) ，每场考试给出 \(s\) 题库发布的时间（即代表从此时起可以开始复习这门科目） \(d\) 这门科目考试的时间 \(t\) 需要复习的时间。 现在，每天你可以选择复习，或者休息，只能选其中一样！如果是考试的时间，则必须去考试！ 问，你是否可以复习完所有科目并通过考试 如果可以，输出安排表，\(1～m\) 代表复习功课，\(0\) 表示休息，\(m+1\) 表示考试。 如果不能，输出 \(-1\)。 ​ 思考： 显然是一道贪心，考试时间越早的我们要越早复习完。 所以开一个 \(struct\) 记录发布时间，考试时间，复习时间，和考试编号 然后对于一天我们就暴力去判断 考试的天必须考试 剩下的根据题目限制判断一下复习还是休息 最后，如果有的科目没有复习完则不合法，否则允许 注意：题目没有要求连续复习，所以允许隔天复习！！！ 不知道为什么我的代码\(struct\) 会导致hexo 报错，所以代码有 \(bug\)，谅解！ 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a.b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 110using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,m,flag;structt st&#123; int id,s,e,t;&#125;a[N];int ans[N];inline bool cmp(st x,st y)&#123; return x.t&lt;y.t;&#125;int main()&#123; n=read(); m=read(); for(register int i=1;i&lt;=m;i++) &#123; a[i].id=i; a[i].s=read(); a[i].t=read(); a[i].e=read(); ans[a[i].t]=m+1; &#125; sort(a+1,a+m+1,cmp); for(register int i=1;i&lt;=n;i++) &#123; if(ans[i]) continue; flag=0; for(register int j=1;j&lt;=m;j++) &#123; if((a[j].e)&amp;&amp;(a[j].s&lt;=i)&amp;&amp;(a[j].t&gt;i)) &#123; ans[i]=a[j].id; a[j].e--; flag=1; &#125; if(flag) break; &#125; &#125; for(register int j=1;j&lt;=m;j++) if(a[j].e) &#123; puts("-1"); return 0; &#125; for(register int i=1;i&lt;=n;i++) printf("%d ",ans[i]);puts(""); return 0;&#125;]]></content>
+    <title><![CDATA[Codeforces 978 E]]></title>
+    <url>%2F2019%2F03%2F12%2Fcf978E%2F</url>
+    <content type="text"><![CDATA[\(Codeforces 978E\) 题解： 978E 题意： ​ ​ ​共 \(N\) 站，汽车每站变化 \(a_i\) 人。问刚开始汽车上人数有多少种可能？ ​ 思考： 因为是变化值，所以相当于差分了一下，先做一遍前缀和，变成每个车站当前有多少人。然后排序前缀和数组。\(- sum_1\) 就是最少的人数边界 \(w - sum_n\) 就是最多的人数边界 最 \(ans\) 就是两者相减 注意： 做处理的时候有可能是单调，也就是说一直下车或者一直上车 最小边界要做处理： \(minn=max(-sum_i , 0)\) 最大边界要做处理： \(maxn=minn(w,w-sum[n])\) 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 1010using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,x,y,ans,w;int a[N],b[N];int main()&#123; n=read(); w=read(); for(register int i=1;i&lt;=n;i++) a[i]=read(),b[i]=b[i-1]+a[i]; sort(b+1,b+n+1); x=w-b[n];x=min(w,x); y=-b[1];y=max(0,y); if(x-y+1&lt;=0) puts("0"); else printf("%d\n",x-y+1); return 0;&#125;]]></content>
       <categories>
         <category>Contest</category>
         <category>Codeforces</category>
@@ -224,10 +224,10 @@
       <tags>
         <tag>Codeforces</tag>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>lv0</tag>
-        <tag>暴力</tag>
-        <tag>贪心</tag>
+        <tag>排序</tag>
+        <tag>思维</tag>
+        <tag>前缀和</tag>
       </tags>
   </entry>
   <entry>
