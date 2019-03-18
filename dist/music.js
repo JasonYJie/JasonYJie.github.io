@@ -14,6 +14,13 @@ const ap = new APlayer({
         artist: 'Vicetone / Cozi Zuehlsdorff',
         url: 'http://www.ytmp3.cn/down/58708.mp3',
         cover: 'http://p1.music.126.net/sOfRLrOCx-THntvvnlimCg==/109951163311532318.jpg',
-      }      
+      },
+      {
+        name: 'China-X',
+        artist: '徐梦圆',
+        url: 'http://www.ytmp3.cn/down/49003.mp3',
+        cover: 'http://p1.music.126.net/qxhi4CQFa1iXeeHhEaOBNg==/17961621951438972.jpg?param=130y130',
+      }             
     ]
 });
+
