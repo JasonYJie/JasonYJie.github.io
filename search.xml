@@ -95,8 +95,8 @@
       <tags>
         <tag>Codeforces</tag>
         <tag>题解</tag>
-        <tag>lv0</tag>
         <tag>模拟</tag>
+        <tag>lv0</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
@@ -112,8 +112,8 @@
       <tags>
         <tag>Codeforces</tag>
         <tag>题解</tag>
-        <tag>lv0</tag>
         <tag>模拟</tag>
+        <tag>lv0</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
@@ -129,8 +129,8 @@
       <tags>
         <tag>Codeforces</tag>
         <tag>题解</tag>
-        <tag>lv0</tag>
         <tag>模拟</tag>
+        <tag>lv0</tag>
       </tags>
   </entry>
   <entry>
@@ -161,8 +161,8 @@
       <tags>
         <tag>Codeforces</tag>
         <tag>题解</tag>
-        <tag>lv0</tag>
         <tag>模拟</tag>
+        <tag>lv0</tag>
       </tags>
   </entry>
   <entry>
@@ -227,8 +227,8 @@
       <tags>
         <tag>Codeforces</tag>
         <tag>题解</tag>
-        <tag>lv0</tag>
         <tag>模拟</tag>
+        <tag>lv0</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
@@ -244,21 +244,8 @@
       <tags>
         <tag>Codeforces</tag>
         <tag>题解</tag>
-        <tag>lv0</tag>
         <tag>模拟</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Codeforces 1066 VP 小结]]></title>
-    <url>%2F2019%2F03%2F15%2Fcf1066vp%2F</url>
-    <content type="text"><![CDATA[不知道为什么我的代码\(struct\) 会导致hexo 报错，所以代码有 \(bug\)，谅解！ 比赛时间\(2019-03-25 08:00～10:00\) $ A $ Codeforces 1066 A 一句话题意： 给定 \(T\) 组数据，每组数据包含四个整数。 给定横坐标终点 \(x\) ，每 \(v\) 个距离就会有一个灯塔。其中 \(l ~ r\) 的距离被遮挡。问最后可以看到多少个灯塔 直接按照模拟题意就好了 注意处理细节，边界问题 $ B $ Codeforces 1066 B 一句话题意： 给定 \(n\) 个 \(0 1\)数字。\(1\) 代表标号为 \(i\) 的坐标点可以影响 \(i-r+1 ~ i+r-1\) 这段区间。 问最少需要多少个点可以覆盖全部n个坐标 模拟题意。用 \(now\) 记录当前覆盖到的最远点，然后倒着扫点，如果可以覆盖则加上 \(O( n ^ 2)\) 据说有 \(O ( n )\) 复杂度。 学会看订正吧 $ C $ Codeforces 1066 C 一句话题意： 给定 \(n\) 个操作。共有三种操作 第一种：\(&quot; l &quot;\) 操作在整个数组之前加一个数字 第二种：\(&quot; r &quot;\) 操作在整个数组之后加一个数字 第三种：\(&quot; ？ &quot;\) 操作 询问一个数字，与数组头尾距离的 \(min\) 因为范围很大显然是不能模拟的 我们思考其实只有最后一种操作是 \(O (n ^ 2 )\)的 所以直接开一个数组 \(a_i\) 表示 \(i\) 这个数字在数组中的位置 最后直接取 \(min (r - a_i , a_i + l)\) $ D $ Codeforces 1066 D 一句话题意： 给定 \(n\) 个物品， \(m\) 个盒子，并告诉每一个盒子的容量 \(k\) 现在已知每个物品的体积，求最大装入数量 其中装入方法： 首先会从 \(1\) 号物品一直装，如果遇到第一个装不下的物品，会丢掉第一个物品 按照题意模拟 首先肯定的是，最后一个物品一定会装进去，那么每次从后往前扫装物品直到不能装就好了 $ E $ Codeforces 1066 E 一句话题意： 给定两个极大的 \(2\) 进制 \(01\) 串每次进行对 \(b\)进行右移操作。并且 \(ans += a &amp; b\) 求 \(ans\) 我们考虑其实改变的只有 \(b\) 所以答案就是对于 \(a_i\) 的每一位 如果当前这位 为\(1\) 贡献就是 \(2^i * sum_i\) \(sum_i\) 表示当前 \(b\) 数字最高位到第 \(i\) 位的 \(1\) 的数量 如果问 \(0\) 贡献就是 \(0\) 所以只要预处理 \(2\) 的幂次和 \(sum_i\) 就好了 最后统计答案 $ F $ Codeforces 1066 F 一句话题意： 给定第一象限内的 \(n\) 个点，将 \(max(x_i,y_i)\)值相同的点定为 \(level(max(x_i,y_i))\) 移动是只能是上下左右方向移动 求一条最短路线访问到所有的点，并且保证在访问 \(level(i+1)\) 的点之前访问完所有的 \(level(i)\)的点. 考试没出，据说是 \(dp\) 感觉有点麻烦 看订正吧 总结： 状态不是很好，前几道出的有点慢 细节考虑的还是不够全面 手速加快，代码能力再加快 #\(Over!\)]]></content>
-      <categories>
-        <category>Contest</category>
-        <category>Codeforces</category>
-        <category>1066</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
+        <tag>lv0</tag>
       </tags>
   </entry>
   <entry>
@@ -269,6 +256,19 @@
         <category>Contest</category>
         <category>Codeforces</category>
         <category>1003</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Codeforces 1066 VP 小结]]></title>
+    <url>%2F2019%2F03%2F15%2Fcf1066vp%2F</url>
+    <content type="text"><![CDATA[不知道为什么我的代码\(struct\) 会导致hexo 报错，所以代码有 \(bug\)，谅解！ 比赛时间\(2019-03-25 08:00～10:00\) $ A $ Codeforces 1066 A 一句话题意： 给定 \(T\) 组数据，每组数据包含四个整数。 给定横坐标终点 \(x\) ，每 \(v\) 个距离就会有一个灯塔。其中 \(l ~ r\) 的距离被遮挡。问最后可以看到多少个灯塔 直接按照模拟题意就好了 注意处理细节，边界问题 $ B $ Codeforces 1066 B 一句话题意： 给定 \(n\) 个 \(0 1\)数字。\(1\) 代表标号为 \(i\) 的坐标点可以影响 \(i-r+1 ~ i+r-1\) 这段区间。 问最少需要多少个点可以覆盖全部n个坐标 模拟题意。用 \(now\) 记录当前覆盖到的最远点，然后倒着扫点，如果可以覆盖则加上 \(O( n ^ 2)\) 据说有 \(O ( n )\) 复杂度。 学会看订正吧 $ C $ Codeforces 1066 C 一句话题意： 给定 \(n\) 个操作。共有三种操作 第一种：\(&quot; l &quot;\) 操作在整个数组之前加一个数字 第二种：\(&quot; r &quot;\) 操作在整个数组之后加一个数字 第三种：\(&quot; ？ &quot;\) 操作 询问一个数字，与数组头尾距离的 \(min\) 因为范围很大显然是不能模拟的 我们思考其实只有最后一种操作是 \(O (n ^ 2 )\)的 所以直接开一个数组 \(a_i\) 表示 \(i\) 这个数字在数组中的位置 最后直接取 \(min (r - a_i , a_i + l)\) $ D $ Codeforces 1066 D 一句话题意： 给定 \(n\) 个物品， \(m\) 个盒子，并告诉每一个盒子的容量 \(k\) 现在已知每个物品的体积，求最大装入数量 其中装入方法： 首先会从 \(1\) 号物品一直装，如果遇到第一个装不下的物品，会丢掉第一个物品 按照题意模拟 首先肯定的是，最后一个物品一定会装进去，那么每次从后往前扫装物品直到不能装就好了 $ E $ Codeforces 1066 E 一句话题意： 给定两个极大的 \(2\) 进制 \(01\) 串每次进行对 \(b\)进行右移操作。并且 \(ans += a &amp; b\) 求 \(ans\) 我们考虑其实改变的只有 \(b\) 所以答案就是对于 \(a_i\) 的每一位 如果当前这位 为\(1\) 贡献就是 \(2^i * sum_i\) \(sum_i\) 表示当前 \(b\) 数字最高位到第 \(i\) 位的 \(1\) 的数量 如果问 \(0\) 贡献就是 \(0\) 所以只要预处理 \(2\) 的幂次和 \(sum_i\) 就好了 最后统计答案 $ F $ Codeforces 1066 F 一句话题意： 给定第一象限内的 \(n\) 个点，将 \(max(x_i,y_i)\)值相同的点定为 \(level(max(x_i,y_i))\) 移动是只能是上下左右方向移动 求一条最短路线访问到所有的点，并且保证在访问 \(level(i+1)\) 的点之前访问完所有的 \(level(i)\)的点. 考试没出，据说是 \(dp\) 感觉有点麻烦 看订正吧 总结： 状态不是很好，前几道出的有点慢 细节考虑的还是不够全面 手速加快，代码能力再加快 #\(Over!\)]]></content>
+      <categories>
+        <category>Contest</category>
+        <category>Codeforces</category>
+        <category>1066</category>
       </categories>
       <tags>
         <tag>总结</tag>
@@ -336,19 +336,20 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Codeforces 977 E]]></title>
-    <url>%2F2019%2F03%2F12%2Fcf977%2Fcf977e%2F</url>
-    <content type="text"><![CDATA[\(Codeforces 977 E\) 题解： 977E 题意： ​​找到所有的单链环的个数 ​ ​ 思考： 很明显，一个单链环中的所有节点的 度都为\(2\) 所以直接对于整个图的点 \(dfs\) 然后判一下边界就好了 不知道为什么我的代码\(struct\) 会导致hexo 报错，所以代码有 \(bug\)，谅解！ 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define ll long long#define N 200010using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,m,cnt,ans,flag;int vis[N],du[N],hed[N];structt st&#123; int to,nxt;&#125;edge[N&lt;&lt;1];inline void add(int x,int y)&#123; cnt++; edge[cnt].to=y; edge[cnt].nxt=hed[x]; hed[x]=cnt;&#125;inline void dfs(int x,int t,int fa)&#123; if(vis[x]==1||du[x]!=2) &#123; flag=0; return ; &#125; vis[x]=1; if(flag) return; for(register int i=hed[x];i;i=edge[i].nxt) &#123; int v=edge[i].to; if(v==fa) continue; if(v==t) &#123; flag=1; return ; &#125; if(flag) return ; dfs(v,t,x); &#125; return ;&#125;int main()&#123; n=read(); m=read(); for(register int i=1;i&lt;=m;i++) &#123; int x,y; x=read(); y=read(); du[y]++,du[x]++; add(x,y); add(y,x); &#125; for(register int i=1;i&lt;=n;i++) if(du[i]==2&amp;&amp;vis[i]==0) &#123; flag=0; dfs(i,i,i); ans+=flag; &#125; printf("%d\n",ans); return 0;&#125;]]></content>
+    <title><![CDATA[Codeforces 978 D]]></title>
+    <url>%2F2019%2F03%2F12%2Fcf978%2Fcf978d%2F</url>
+    <content type="text"><![CDATA[\(Codeforces 978D\) 题解： 978D 题意： ​ ​ 给 \(n\) 个数字 每个数字可以 \(+1\) \(-1\) 或者 不变，问最少改变几位数字，可以使得 这个 这个序列是单调的，递增或递减或不变 ​ 思考： 读入序列以后，我们考虑最后既然是等差数列，那么公差一定是不变的，也就是可以是 \(a_i - a_{i-1}\) 所以我们只要枚举前两个的改变方式，一共有 \(3*3=9\) 种，然后枚举完公差以后我们可以推出来完整数组，然后和原数组比较，更新答案 一个小细节：就是会出现无法改变成要求的数组，那么我们需要记一下一共无法改变多少次，如果是 \(9\)次的话，输出 \(-1\) 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 100010using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;int n,ans,flag,sum;int a[N],b[N];int main()&#123; n=read(),ans=n; for(register int i=1;i&lt;=n;i++) a[i]=read(); for(register int l=-1;l&lt;=1;l++) for(register int k=-1;k&lt;=1;k++) &#123; b[1]=a[1]+l; b[2]=a[2]+k; int c=b[2]-b[1]; for(register int i=3;i&lt;=n;i++) b[i]=b[i-1]+c; int cnt=0;flag=0; for(register int i=1;i&lt;=n;i++) if(b[i]!=a[i]) &#123; if(abs(b[i]-a[i])&gt;1) &#123; flag=1; sum++; break; &#125; cnt++; &#125; if(!flag) ans=min(ans,cnt); &#125; if(sum!=9) printf("%d\n",ans); else puts("-1"); return 0;&#125;]]></content>
       <categories>
         <category>Contest</category>
         <category>Codeforces</category>
-        <category>977</category>
+        <category>978</category>
       </categories>
       <tags>
+        <tag>数学</tag>
         <tag>Codeforces</tag>
         <tag>题解</tag>
-        <tag>DP</tag>
         <tag>lv0</tag>
+        <tag>思维</tag>
       </tags>
   </entry>
   <entry>
@@ -363,9 +364,9 @@
       <tags>
         <tag>Codeforces</tag>
         <tag>题解</tag>
-        <tag>暴力</tag>
-        <tag>lv0</tag>
         <tag>模拟</tag>
+        <tag>lv0</tag>
+        <tag>暴力</tag>
         <tag>贪心</tag>
       </tags>
   </entry>
@@ -381,27 +382,10 @@
       <tags>
         <tag>Codeforces</tag>
         <tag>题解</tag>
-        <tag>lv0</tag>
         <tag>模拟</tag>
+        <tag>lv0</tag>
         <tag>排序</tag>
         <tag>二分查找</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Codeforces 978 C]]></title>
-    <url>%2F2019%2F03%2F12%2Fcf978%2Fcf978c%2F</url>
-    <content type="text"><![CDATA[\(Codeforces 978 C\) 题解： 978C 题意： ​ ​ \(n\) 个宿舍，每个宿舍有 \(a_i\) 个房间，再给你 \(m\)个数，问每个数在第几个宿舍的第几个房间。 ​ ​ 思考： 读入房间 \(a_i\)之后，我们做一遍前缀和，因为输入保证 \(m\) 个数字保证递增，所以可以边读如边处理，如果小于当前的 \(sum_i\) 继续 $ i++ $ 否则输出就好了 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 200010using namespace std;inline ll read()&#123; register ll x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,m,now;ll a[N],sum[N];int main()&#123; n=read(); m=read(); for(register int i=1;i&lt;=n;i++) &#123; a[i]=read(); sum[i]=a[i]+sum[i-1]; &#125; for(register int i=1;i&lt;=m;i++) &#123; ll x=read(); while(x&gt;sum[now]) now++; printf("%d %lld\n",now,x-sum[now-1]); &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>Contest</category>
-        <category>Codeforces</category>
-        <category>978</category>
-      </categories>
-      <tags>
-        <tag>Codeforces</tag>
-        <tag>题解</tag>
-        <tag>lv0</tag>
-        <tag>模拟</tag>
-        <tag>前缀和</tag>
       </tags>
   </entry>
   <entry>
@@ -423,38 +407,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Codeforces 978 A]]></title>
-    <url>%2F2019%2F03%2F12%2Fcf978%2Fcf978a%2F</url>
-    <content type="text"><![CDATA[\(Codeforces 978 A\) 题解： 978A 题意： ​ 给定 \(n\) 个整数 ，要求输出数字种类，并且去除重复数字后输出，如果是重复的元素则以最后一次出现的次序完成输出。 ​ 思考： 数据范围 \(a_i\) 很小，只需要开一个 \(rub\) 就好了，记录当前数字是否被访问过，如果没有访问过，记录访问，然后用一个数组记录一下 最后倒序输出 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 1010using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,maxn;int a[N],rub[N],c[N],cnt;inline bool cmp(int c,int d)&#123; return c&gt;d;&#125;int main()&#123; n=read(); for(register int i=1;i&lt;=n;i++) a[i]=read(),maxn=max(maxn,a[i]); for(register int i=n;i&gt;=1;i--) if(!rub[a[i]]) &#123; rub[a[i]]=1; c[++cnt]=a[i]; &#125; printf("%d\n",cnt); for(register int i=cnt;i&gt;=1;i--) printf("%d ",c[i]);puts(""); return 0;&#125; 拓展： 考虑范围很大怎么做 其实也很简单 离散一下数字或者使用 \(map\) 然后就可以按照之前的方法进行处理了]]></content>
-      <categories>
-        <category>Contest</category>
-        <category>Codeforces</category>
-        <category>978</category>
-      </categories>
-      <tags>
-        <tag>Codeforces</tag>
-        <tag>题解</tag>
-        <tag>暴力</tag>
-        <tag>lv0</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Codeforces 977 C]]></title>
-    <url>%2F2019%2F03%2F12%2Fcf977%2Fcf977c%2F</url>
-    <content type="text"><![CDATA[\(Codeforces 977 C\) 题解： 977C 题意： 给你一个长度为 \(n\) 的整数序列和一个数 \(k\) 。 您应该在 \([1 , 1e9]\)（即 $1 x 1e9 $）的范围内输出任何整数 \(x\)，使得给定序列的 \(k\) 个元素恰好小于或等于x。 请注意，该序列可以包含相同的元素。 如果没有这样的\(x\)，则输出 \(“-1”\)（不含引号） ​ 思考： 直接进行排序，然后吧第 \(k\) 的元素输出 然后你就会发现 \(Wa\) 了 少了一种情况 如果 \(k==0\) 时，而当前 \(a_1\) 却等于 \(1\) 你会发现其实是没有数字满足要求的 所以还要特判一下 \(k==0\) 的情况就好了 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 2000100using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,k;int a[N];int main()&#123; n=read(); k=read(); for(register int i=1;i&lt;=n;i++) a[i]=read(); sort(a+1,a+n+1); int tmp=a[k],sum=0; for(register int i=1;i&lt;=n;i++) if(tmp&gt;=a[i]) sum++; if(k==0) &#123; if(a[1]==1) puts("-1"); else printf("%d\n",a[1]-1); return 0; &#125; if(sum==k) printf("%d\n",tmp); else puts("-1"); return 0;&#125;]]></content>
-      <categories>
-        <category>Contest</category>
-        <category>Codeforces</category>
-        <category>977</category>
-      </categories>
-      <tags>
-        <tag>Codeforces</tag>
-        <tag>题解</tag>
-        <tag>暴力</tag>
-        <tag>lv0</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Codeforces 978 B]]></title>
     <url>%2F2019%2F03%2F12%2Fcf978%2Fcf978b%2F</url>
     <content type="text"><![CDATA[\(Codeforces 978 B\) 题解： 978B 题意： ​ 给出一串字符串，判断里面有对少个连续 $ 3$的 \(“x”\)。注意 \(xxxx\) 里面有两个 \(”xxx“\) ​ 思考： 只需要读入之后，对于每个字符进行识别，如果是 \(x\) 的话，计数器 \(cnt ++\) 否则置零。 然后每次判断是否 $ 3$是的话 $ ans++ $ 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 1010using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,cnt,ans;char s[N];int main()&#123; n=read(); scanf("%s",s); for(register int i=0;i&lt;n;i++) &#123; if(s[i]=='x') cnt++; else cnt=0; if(cnt&gt;=3) ans++; &#125; printf("%d\n",ans);&#125;]]></content>
@@ -466,25 +418,57 @@
       <tags>
         <tag>Codeforces</tag>
         <tag>题解</tag>
-        <tag>暴力</tag>
         <tag>lv0</tag>
+        <tag>暴力</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Codeforces 978 D]]></title>
-    <url>%2F2019%2F03%2F12%2Fcf978%2Fcf978d%2F</url>
-    <content type="text"><![CDATA[\(Codeforces 978D\) 题解： 978D 题意： ​ ​ 给 \(n\) 个数字 每个数字可以 \(+1\) \(-1\) 或者 不变，问最少改变几位数字，可以使得 这个 这个序列是单调的，递增或递减或不变 ​ 思考： 读入序列以后，我们考虑最后既然是等差数列，那么公差一定是不变的，也就是可以是 \(a_i - a_{i-1}\) 所以我们只要枚举前两个的改变方式，一共有 \(3*3=9\) 种，然后枚举完公差以后我们可以推出来完整数组，然后和原数组比较，更新答案 一个小细节：就是会出现无法改变成要求的数组，那么我们需要记一下一共无法改变多少次，如果是 \(9\)次的话，输出 \(-1\) 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 100010using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;int n,ans,flag,sum;int a[N],b[N];int main()&#123; n=read(),ans=n; for(register int i=1;i&lt;=n;i++) a[i]=read(); for(register int l=-1;l&lt;=1;l++) for(register int k=-1;k&lt;=1;k++) &#123; b[1]=a[1]+l; b[2]=a[2]+k; int c=b[2]-b[1]; for(register int i=3;i&lt;=n;i++) b[i]=b[i-1]+c; int cnt=0;flag=0; for(register int i=1;i&lt;=n;i++) if(b[i]!=a[i]) &#123; if(abs(b[i]-a[i])&gt;1) &#123; flag=1; sum++; break; &#125; cnt++; &#125; if(!flag) ans=min(ans,cnt); &#125; if(sum!=9) printf("%d\n",ans); else puts("-1"); return 0;&#125;]]></content>
+    <title><![CDATA[Codeforces 978 A]]></title>
+    <url>%2F2019%2F03%2F12%2Fcf978%2Fcf978a%2F</url>
+    <content type="text"><![CDATA[\(Codeforces 978 A\) 题解： 978A 题意： ​ 给定 \(n\) 个整数 ，要求输出数字种类，并且去除重复数字后输出，如果是重复的元素则以最后一次出现的次序完成输出。 ​ 思考： 数据范围 \(a_i\) 很小，只需要开一个 \(rub\) 就好了，记录当前数字是否被访问过，如果没有访问过，记录访问，然后用一个数组记录一下 最后倒序输出 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 1010using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,maxn;int a[N],rub[N],c[N],cnt;inline bool cmp(int c,int d)&#123; return c&gt;d;&#125;int main()&#123; n=read(); for(register int i=1;i&lt;=n;i++) a[i]=read(),maxn=max(maxn,a[i]); for(register int i=n;i&gt;=1;i--) if(!rub[a[i]]) &#123; rub[a[i]]=1; c[++cnt]=a[i]; &#125; printf("%d\n",cnt); for(register int i=cnt;i&gt;=1;i--) printf("%d ",c[i]);puts(""); return 0;&#125; 拓展： 考虑范围很大怎么做 其实也很简单 离散一下数字或者使用 \(map\) 然后就可以按照之前的方法进行处理了]]></content>
       <categories>
         <category>Contest</category>
         <category>Codeforces</category>
         <category>978</category>
       </categories>
       <tags>
-        <tag>数学</tag>
         <tag>Codeforces</tag>
         <tag>题解</tag>
         <tag>lv0</tag>
-        <tag>思维</tag>
+        <tag>暴力</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Codeforces 977 E]]></title>
+    <url>%2F2019%2F03%2F12%2Fcf977%2Fcf977e%2F</url>
+    <content type="text"><![CDATA[\(Codeforces 977 E\) 题解： 977E 题意： ​​找到所有的单链环的个数 ​ ​ 思考： 很明显，一个单链环中的所有节点的 度都为\(2\) 所以直接对于整个图的点 \(dfs\) 然后判一下边界就好了 不知道为什么我的代码\(struct\) 会导致hexo 报错，所以代码有 \(bug\)，谅解！ 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define ll long long#define N 200010using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,m,cnt,ans,flag;int vis[N],du[N],hed[N];structt st&#123; int to,nxt;&#125;edge[N&lt;&lt;1];inline void add(int x,int y)&#123; cnt++; edge[cnt].to=y; edge[cnt].nxt=hed[x]; hed[x]=cnt;&#125;inline void dfs(int x,int t,int fa)&#123; if(vis[x]==1||du[x]!=2) &#123; flag=0; return ; &#125; vis[x]=1; if(flag) return; for(register int i=hed[x];i;i=edge[i].nxt) &#123; int v=edge[i].to; if(v==fa) continue; if(v==t) &#123; flag=1; return ; &#125; if(flag) return ; dfs(v,t,x); &#125; return ;&#125;int main()&#123; n=read(); m=read(); for(register int i=1;i&lt;=m;i++) &#123; int x,y; x=read(); y=read(); du[y]++,du[x]++; add(x,y); add(y,x); &#125; for(register int i=1;i&lt;=n;i++) if(du[i]==2&amp;&amp;vis[i]==0) &#123; flag=0; dfs(i,i,i); ans+=flag; &#125; printf("%d\n",ans); return 0;&#125;]]></content>
+      <categories>
+        <category>Contest</category>
+        <category>Codeforces</category>
+        <category>977</category>
+      </categories>
+      <tags>
+        <tag>Codeforces</tag>
+        <tag>题解</tag>
+        <tag>DP</tag>
+        <tag>lv0</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Codeforces 978 C]]></title>
+    <url>%2F2019%2F03%2F12%2Fcf978%2Fcf978c%2F</url>
+    <content type="text"><![CDATA[\(Codeforces 978 C\) 题解： 978C 题意： ​ ​ \(n\) 个宿舍，每个宿舍有 \(a_i\) 个房间，再给你 \(m\)个数，问每个数在第几个宿舍的第几个房间。 ​ ​ 思考： 读入房间 \(a_i\)之后，我们做一遍前缀和，因为输入保证 \(m\) 个数字保证递增，所以可以边读如边处理，如果小于当前的 \(sum_i\) 继续 $ i++ $ 否则输出就好了 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 200010using namespace std;inline ll read()&#123; register ll x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,m,now;ll a[N],sum[N];int main()&#123; n=read(); m=read(); for(register int i=1;i&lt;=n;i++) &#123; a[i]=read(); sum[i]=a[i]+sum[i-1]; &#125; for(register int i=1;i&lt;=m;i++) &#123; ll x=read(); while(x&gt;sum[now]) now++; printf("%d %lld\n",now,x-sum[now-1]); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>Contest</category>
+        <category>Codeforces</category>
+        <category>978</category>
+      </categories>
+      <tags>
+        <tag>Codeforces</tag>
+        <tag>题解</tag>
+        <tag>模拟</tag>
+        <tag>lv0</tag>
+        <tag>前缀和</tag>
       </tags>
   </entry>
   <entry>
@@ -505,9 +489,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Codeforces 977 A]]></title>
-    <url>%2F2019%2F03%2F12%2Fcf977%2Fcf977a%2F</url>
-    <content type="text"><![CDATA[\(Codeforces 977 A\) 题解： 977A 题意： 给定一个整数 \(n\) 然后给定一个操作次数 \(k\) ,要求输出最后根据操作的数字 操作如下： 当最后一位不为\(0\) 则减 \(1\) 否则除 \(10\) ​ 思考： 直接按照题意模拟就好了，没什么好说的 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N using namespace std;inline ll read()&#123; register ll x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;ll n,k;int main()&#123; n=read(); k=read(); for(register int i=1;i&lt;=k;i++) &#123; if(n%10!=0) n--; else n/=10; &#125; printf("%lld\n",n); return 0;&#125;]]></content>
+    <title><![CDATA[Codeforces 977 C]]></title>
+    <url>%2F2019%2F03%2F12%2Fcf977%2Fcf977c%2F</url>
+    <content type="text"><![CDATA[\(Codeforces 977 C\) 题解： 977C 题意： 给你一个长度为 \(n\) 的整数序列和一个数 \(k\) 。 您应该在 \([1 , 1e9]\)（即 $1 x 1e9 $）的范围内输出任何整数 \(x\)，使得给定序列的 \(k\) 个元素恰好小于或等于x。 请注意，该序列可以包含相同的元素。 如果没有这样的\(x\)，则输出 \(“-1”\)（不含引号） ​ 思考： 直接进行排序，然后吧第 \(k\) 的元素输出 然后你就会发现 \(Wa\) 了 少了一种情况 如果 \(k==0\) 时，而当前 \(a_1\) 却等于 \(1\) 你会发现其实是没有数字满足要求的 所以还要特判一下 \(k==0\) 的情况就好了 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N 2000100using namespace std;inline int read()&#123; register int x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;int n,k;int a[N];int main()&#123; n=read(); k=read(); for(register int i=1;i&lt;=n;i++) a[i]=read(); sort(a+1,a+n+1); int tmp=a[k],sum=0; for(register int i=1;i&lt;=n;i++) if(tmp&gt;=a[i]) sum++; if(k==0) &#123; if(a[1]==1) puts("-1"); else printf("%d\n",a[1]-1); return 0; &#125; if(sum==k) printf("%d\n",tmp); else puts("-1"); return 0;&#125;]]></content>
       <categories>
         <category>Contest</category>
         <category>Codeforces</category>
@@ -517,7 +501,7 @@
         <tag>Codeforces</tag>
         <tag>题解</tag>
         <tag>lv0</tag>
-        <tag>模拟</tag>
+        <tag>暴力</tag>
       </tags>
   </entry>
   <entry>
@@ -532,7 +516,23 @@
       <tags>
         <tag>Codeforces</tag>
         <tag>题解</tag>
+        <tag>lv0</tag>
         <tag>暴力</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Codeforces 977 A]]></title>
+    <url>%2F2019%2F03%2F12%2Fcf977%2Fcf977a%2F</url>
+    <content type="text"><![CDATA[\(Codeforces 977 A\) 题解： 977A 题意： 给定一个整数 \(n\) 然后给定一个操作次数 \(k\) ,要求输出最后根据操作的数字 操作如下： 当最后一位不为\(0\) 则减 \(1\) 否则除 \(10\) ​ 思考： 直接按照题意模拟就好了，没什么好说的 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;algorithm&gt;#include &lt;cctype&gt;#define maX(a,b) (a&gt;b?a:b)#define miN(a,b) (a&lt;b?a:b)#define ll long long#define N using namespace std;inline ll read()&#123; register ll x=0; register bool f=0; register char ch=getchar(); while(!isdigit(ch)) &#123; f^=!(ch^'-'); ch=getchar(); &#125; while(isdigit(ch)) &#123; x=((x+(x&lt;&lt;2))&lt;&lt;1)+(ch^'0'); ch=getchar(); &#125; return f?-x:x;&#125;inline void print(int x)&#123; register int sc[30]=&#123;0&#125;,tot=0; do &#123; sc[++tot]=x%10; x/=10; &#125;while(x); while(tot) putchar('0'+sc[tot--]);&#125;ll n,k;int main()&#123; n=read(); k=read(); for(register int i=1;i&lt;=k;i++) &#123; if(n%10!=0) n--; else n/=10; &#125; printf("%lld\n",n); return 0;&#125;]]></content>
+      <categories>
+        <category>Contest</category>
+        <category>Codeforces</category>
+        <category>977</category>
+      </categories>
+      <tags>
+        <tag>Codeforces</tag>
+        <tag>题解</tag>
+        <tag>模拟</tag>
         <tag>lv0</tag>
       </tags>
   </entry>
@@ -568,7 +568,7 @@
   <entry>
     <title><![CDATA[作息计划]]></title>
     <url>%2F2019%2F03%2F11%2F%E4%BD%9C%E6%81%AF%E8%AE%A1%E5%88%92%2F</url>
-    <content type="text"><![CDATA[作息计划 序号 时间 内容 A 06:00 起床 B 06:30 背单词 C 07:30～08:00 整理文件夹&amp;&amp;加题目 D 08:00～10:00 CF VP E 10:00~11:40 学习知识点&amp;&amp;练习 F 12:30～13:00 休息 G 13:00～14:00 练字 H 14:00～15:00 看书 I 15:00～18:00 练习 J 18:00～20:00 文化课 K 20:00～21:00 总结 L 21:00～22:00 锻炼 M 22:00～24:00 练习 N 24:00～01:00 整理总结 执行: 2019-03-04 一周一次 \(Update\) 日期 A B C D E F G H I J K L M N 0304 0305 0306 0307 0308 0309 0310 0311 T T T T T T T F F F T]]></content>
+    <content type="text"><![CDATA[作息计划 序号 时间 内容 A 06:00 起床 B 06:30 背单词 C 07:30～08:00 整理文件夹 D 08:00～10:00 CF VP E 10:00~11:40 订正&amp;&amp;总结 F 12:30～13:00 休息 G 13:00～14:00 练字 H 14:00～15:00 学习知识点 I 15:00～18:00 luogu练习 J 18:00～20:00 CF练习 K 20:00～22:00 锻炼 L 22:00～24:00 NOIP M 24:00～02:00 练习 N 02:00～02:30 整理总结 执行: 2019-04-03]]></content>
       <categories>
         <category>计划</category>
         <category>作息</category>
@@ -580,7 +580,7 @@
   <entry>
     <title><![CDATA[学习计划]]></title>
     <url>%2F2019%2F03%2F11%2F%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92%2F</url>
-    <content type="text"><![CDATA[学习计划 上级 学习内容 日期 是否完成 语法 BFS（宽度优先搜索遍历） 3月4日 T 语法 DFS（深度优先搜索遍历） 3月4日 T 语法 记忆化搜索 3月5日 T 语法 简单动态规划 3月6日 T 语法 线性dp 多维dp 树形dp 背包dp 3月7日 3月8日 T 语法 二分答案 3月12日 语法 三分查找 3月12日 数学 快速幂 3月12日 数学 欧拉筛求质数 3月12日 BFS BFS + hash 3月13日 BFS 双向BFS 3月13日 深搜剪枝 最优性剪枝 3月13日 深搜剪枝 可行性剪枝 3月13日 BFS 迭代加深 3月13日 BFS 启发式搜索 3月13日 语法 邻接矩阵 3月14日 最短路径 Dijkstra 3月14日 最短路径 SPFA 3月14日 最短路径 floyd 无向图传递闭包 3月15日 语法 并查集 3月16日 图论 Kruskal 3月16日 图论 Prim 3月16日 图论 拓扑序 3月17日 最短路径 差分约束系统 3月18日 语法 链表思想 领接表 3月19日 字符串 最小表示法 3月20日 字符串 最长回文子串Manacher 3月20日 字符串 Hash 3月20日 数学 矩阵乘法 3月20日 语法 STL 3月21日 树 树的重心 3月22日 树 树的直径 3月22日 简单DP 动态规划 3月23日 位运算 状压dp 3月23日 图论 图的联通性Tarjan（有向图） 3月24日 图论 割点割边点双边双（无向图） 3月25日 图论 LCA（含rmq） 3月26日 图论 2-sat 3月27日 网络流 最大流 3月28日 网络流 费用流 3月29日 数据结构 堆 3月30日 数据结构 树状数组 3月30日 数据结构 线段树 3月31日 线段树 扫描线（先学线段树） 4月1日 常见方法 莫队和树上莫队 4月2日 常见方法 DFS序 4月3日 常见方法 前缀和和差分 4月3日 动态规划 背包9讲 4月4日 动态规划 状态压缩 4月5日 动态规划 单调队列 4月6日 动态规划 四边形不等式 4月7日 动态规划 高级数据结构优化 4月8日 动态规划 斜率优化 4月9日 动态规划 划分数问题 4月10日 搜索 DP其余优化 4月11日 搜索 搜索DLX 4月12日 搜索 整数分块 4月13日 数学 欧几里得 4月14日 数学 扩展欧几里得 乘法逆元 4月14日 数学 高斯消元 4月15日 数学 中国剩余定理 4月16日 数学 大数因式分解pollard-rho 4月17日 数学 大质数判断 Miller-Rabin 4月18日 数学 博弈SG 4月19日 数学 欧拉函数 4月20日 计算几何 点积、叉积 4月21日 计算几何 凸包 4月22日 字符串 KMP 4月22日 字符串 扩展KMP 4月23日 字符串 后缀数组 4月24日 字符串 字母树 4月25日 字符串 AC自动机 4月25日 思维 数点问题 4月26日 思维 块状链表 4月27日 高级数据结构 Treap[传统旋转式] 4月28日 高级数据结构 Treap [非旋转式] 4月28日 高级数据结构 笛卡尔树 4月29日 高级数据结构 左偏树 4月30日 高级数据结构 主席树 5月1日 高级数据结构 Splay 5月2日 高级数据结构 替罪羊树 5月3日 高级数据结构 树链剖分 5月4日 高级数据结构 Link Cut Tree 5月5日 高级数据结构 树套树 5月6日 高级数据结构 整体二分 5月7日 高级数据结构 CDQ分治 5月8日 高级数据结构 可持久化 5月9日 高级数据结构 KDtree 5月10日 高级数据结构 李超线段树 5月11日 树的分治 点分 5月12日 树的分治 边分 5月13日 动态规划 数位动归 5月14日 动态规划 概率期望计数 5月15日 动态规划 插头 5月16日 数学 线性筛求积性函数 5月17日 数学 莫比乌斯反演 5月18日 数学 杜教筛求积性函数前缀和 5月19日 数学 容斥 5月20日 数学 Burnside引理与Polya定理 5月21日 数学 FFT 5月22日 数学 NTT 5月23日 数学 构造 5月24日 数学 组合 5月25日 数学 Simpson 5月26日 数学 线性基 矩阵求逆 常系数线性递推式 5月27日 数学 杨氏矩阵 5月28日 计算几何 半平面交 5月29日 计算几何 旋转卡壳 5月30日 计算几何 凸包合并 5月31日 图论 仙人掌圆方树 图论 最大权闭合子图 图论 单纯形 图论 平面图转对偶图 图论 消圈 字符串 后缀自动机 高级数据结构 Pqtree 高级数据结构 AAATree 高级数据结构 ETT 高级数据结构 TopTree 高级数据结构 动态图连通性 高级数据结构 动态图边双&amp;&amp;点双 高级数据结构 动态平面图判定 树的分治 动态树分治（点分树） 数学 洲阁筛 数学 非质数NTT 数学 非2^n长度fft 数学 多项式求逆元 数学 多项式除法 数学 多项式牛顿迭代（开根） 数学 多点求值 数学 快速插值 计算几何 凸包合并 计算几何 Voronoi Diagrams 计算几何 动态凸包 计算几何 洋葱壳 计算几何 平面图点定位 图论 O(nm)网络流 图论 单纯形 图论 LinkCutCactus 图论 TopCactus 图论 消圈 图论 m^2*logn费用流 图论 多项式复杂度线性规划 字符串 后缀树Ukkonen 字符串 后缀平衡树 字符串 后缀仙人掌]]></content>
+    <content type="text"><![CDATA[学习计划 上级 学习内容 日期 是否完成 语法 BFS（宽度优先搜索遍历） 4月3日 语法 DFS（深度优先搜索遍历） 4月3日 语法 记忆化搜索 4月3日 语法 简单动态规划 4月4日 语法 线性dp 多维dp 树形dp 背包dp 4月4日 语法 二分答案 4月5日 语法 三分查找 4月5日 数学 快速幂 4月5日 数学 欧拉筛求质数 4月5日 BFS BFS + hash 4月6日 BFS 双向BFS 4月6日 深搜剪枝 最优性剪枝 4月6日 深搜剪枝 可行性剪枝 4月6日 BFS 迭代加深 4月6日 BFS 启发式搜索 4月6日 语法 邻接矩阵 4月7日 最短路径 Dijkstra 4月7日 最短路径 SPFA 4月7日 最短路径 floyd 无向图传递闭包 4月7日 语法 并查集 4月8日 图论 Kruskal 4月8日 图论 Prim 4月8日 图论 拓扑序 4月9日 最短路径 差分约束系统 4月9日 语法 链表思想 领接表 4月9日 字符串 最小表示法 4月10日 字符串 最长回文子串Manacher 4月10日 字符串 Hash 4月10日 数学 矩阵乘法 4月10日 语法 STL 4月10日 树 树的重心 4月11日 树 树的直径 4月11日 简单DP 动态规划 4月12日 位运算 状压dp 4月12日 图论 图的联通性Tarjan（有向图） 4月13日 图论 割点割边点双边双（无向图） 4月13日 图论 LCA（含rmq） 4月14日 图论 2-sat 4月15日 网络流 最大流 4月15日 网络流 费用流 4月15日 数据结构 堆 4月16日 数据结构 树状数组 4月16日 数据结构 线段树 4月16日 线段树 扫描线（先学线段树） 4月16日 常见方法 莫队和树上莫队 4月17日 常见方法 DFS序 4月17日 常见方法 前缀和和差分 4月17日 动态规划 背包9讲 4月18日 动态规划 状态压缩 4月18日 动态规划 单调队列 4月19日 动态规划 四边形不等式 4月19日 动态规划 高级数据结构优化 4月20日 动态规划 斜率优化 4月21日 动态规划 划分数问题 4月21日 搜索 DP其余优化 4月21日 搜索 搜索DLX 4月22日 搜索 整数分块 4月22日 数学 欧几里得 4月23日 数学 扩展欧几里得 乘法逆元 4月23日 数学 高斯消元 4月24日 数学 中国剩余定理 4月25日 数学 大数因式分解pollard-rho 4月26日 数学 大质数判断 Miller-Rabin 4月26日 数学 博弈SG 4月27日 数学 欧拉函数 4月28日 计算几何 点积、叉积 4月29日 计算几何 凸包 4月29日 字符串 KMP 4月30日 字符串 扩展KMP 4月30日 字符串 后缀数组 5月1日 字符串 字母树 5月2日 字符串 AC自动机 5月3日 思维 数点问题 5月4日 思维 块状链表 5月4日 高级数据结构 Treap[传统旋转式] 5月5日 高级数据结构 Treap [非旋转式] 5月5日 高级数据结构 笛卡尔树 5月6日 高级数据结构 左偏树 5月7日 高级数据结构 主席树 5月8日 高级数据结构 Splay 5月9日 高级数据结构 替罪羊树 5月10日 高级数据结构 树链剖分 5月11日 高级数据结构 Link Cut Tree 5月12日 高级数据结构 树套树 5月13日 高级数据结构 整体二分 5月14日 高级数据结构 CDQ分治 5月15日 高级数据结构 可持久化 5月16日 高级数据结构 KDtree 5月17日 高级数据结构 李超线段树 5月18日 树的分治 点分 5月19日 树的分治 边分 5月20日 动态规划 数位动归 5月21日 动态规划 概率期望计数 5月22日 动态规划 插头 5月23日 数学 线性筛求积性函数 5月24日 数学 莫比乌斯反演 5月25日 数学 杜教筛求积性函数前缀和 5月26日 数学 容斥 5月27日 数学 Burnside引理与Polya定理 5月28日 数学 FFT 5月29日 数学 NTT 5月30日 数学 构造 5月31日 数学 组合 6月1日 数学 Simpson 6月2日 数学 线性基 矩阵求逆 常系数线性递推式 6月3日 数学 杨氏矩阵 6月4日 计算几何 半平面交 6月5日 计算几何 旋转卡壳 6月6日 计算几何 凸包合并 6月7日 字符串 后缀自动机 6月8日 图论 仙人掌圆方树 图论 最大权闭合子图 图论 单纯形 图论 平面图转对偶图 图论 消圈 高级数据结构 Pqtree 高级数据结构 AAATree 高级数据结构 ETT 高级数据结构 TopTree 高级数据结构 动态图连通性 高级数据结构 动态图边双&amp;&amp;点双 高级数据结构 动态平面图判定 树的分治 动态树分治（点分树） 数学 洲阁筛 数学 非质数NTT 数学 非2^n长度fft 数学 多项式求逆元 数学 多项式除法 数学 多项式牛顿迭代（开根） 数学 多点求值 数学 快速插值 计算几何 凸包合并 计算几何 Voronoi Diagrams 计算几何 动态凸包 计算几何 洋葱壳 计算几何 平面图点定位 图论 O(nm)网络流 图论 单纯形 图论 LinkCutCactus 图论 TopCactus 图论 消圈 图论 m^2*logn费用流 图论 多项式复杂度线性规划 字符串 后缀树Ukkonen 字符串 后缀平衡树 字符串 后缀仙人掌]]></content>
       <categories>
         <category>计划</category>
         <category>学习</category>
