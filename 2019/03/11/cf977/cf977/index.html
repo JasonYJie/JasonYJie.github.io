@@ -160,18 +160,18 @@
 
 
 
-  <meta name="description" content="比赛时间： 2019-03-11 08:00～10:00">
+  <meta name="description" content="不知道为什么我的代码\(struct\) 会导致hexo 报错，所以代码有 \(bug\)，谅解！ 比赛时间： 2019-03-11 08:00～10:00">
 <meta name="keywords" content="总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Codeforces 977 VP 小结">
+<meta property="og:title" content="Codeforces 977 VP 总结">
 <meta property="og:url" content="https://jasonyjie.github.io/2019/03/11/cf977/cf977/index.html">
 <meta property="og:site_name" content="Jason_Jie">
-<meta property="og:description" content="比赛时间： 2019-03-11 08:00～10:00">
+<meta property="og:description" content="不知道为什么我的代码\(struct\) 会导致hexo 报错，所以代码有 \(bug\)，谅解！ 比赛时间： 2019-03-11 08:00～10:00">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-13T02:24:50.568Z">
+<meta property="og:updated_time" content="2019-04-17T01:15:22.827Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codeforces 977 VP 小结">
-<meta name="twitter:description" content="比赛时间： 2019-03-11 08:00～10:00">
+<meta name="twitter:title" content="Codeforces 977 VP 总结">
+<meta name="twitter:description" content="不知道为什么我的代码\(struct\) 会导致hexo 报错，所以代码有 \(bug\)，谅解！ 比赛时间： 2019-03-11 08:00～10:00">
 
 
 
@@ -188,7 +188,7 @@
   };
 </script>
 
-  <title>Codeforces 977 VP 小结 | Jason_Jie</title>
+  <title>Codeforces 977 VP 总结 | Jason_Jie</title>
   
 
 
@@ -472,7 +472,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Codeforces 977 VP 小结
+          <h1 class="post-title" itemprop="name headline">Codeforces 977 VP 总结
 
               
             
@@ -517,7 +517,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-13 10:24:50" itemprop="dateModified" datetime="2019-03-13T10:24:50+08:00">2019-03-13</time>
+                <time title="Modified: 2019-04-17 09:15:22" itemprop="dateModified" datetime="2019-04-17T09:15:22+08:00">2019-04-17</time>
               
             
           </span>
@@ -548,7 +548,14 @@
                   , 
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Contest/Codeforces/977/" itemprop="url" rel="index"><span itemprop="name">977</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Contest/Codeforces/Div3/" itemprop="url" rel="index"><span itemprop="name">Div3</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Contest/Codeforces/Div3/977-Finished/" itemprop="url" rel="index"><span itemprop="name">977 Finished</span></a></span>
 
                 
                 
@@ -590,45 +597,83 @@
       
 
       
-        <h1 id="比赛时间">比赛时间：</h1>
+        <p><strong>不知道为什么我的代码<span class="math inline">\(struct\)</span> 会导致hexo 报错，所以代码有 <span class="math inline">\(bug\)</span>，谅解！</strong></p>
+<h1 id="比赛时间">比赛时间：</h1>
 <p>2019-03-11 08:00～10:00</p>
 <a id="more"></a>
 <h2 id="a">$ A $</h2>
 <p><a href="http://codeforces.com/contest/977/problem/A" target="_blank" rel="noopener">Codeforces 977 a</a></p>
+<p>一句话题意：</p>
+<p>给定一个整数 <span class="math inline">\(n\)</span> 然后给定一个操作次数 <span class="math inline">\(k\)</span> ,要求输出最后根据操作的数字</p>
+<p>操作如下：</p>
+<ol type="1">
+<li>当最后一位不为<span class="math inline">\(0\)</span> 则减 <span class="math inline">\(1\)</span></li>
+<li>否则除 <span class="math inline">\(10\)</span></li>
+</ol>
 <p>开场看 <span class="math inline">\(A\)</span> 这不是道 <span class="math inline">\(SB\)</span> 题？</p>
 <p>直接模拟一下就吼了啊！</p>
 <p>写了</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> tmp=n/<span class="number">10</span>;</span><br><span class="line">		tmp*=<span class="number">10</span>;</span><br><span class="line">		<span class="keyword">if</span>(n%tmp!=<span class="number">0</span>)</span><br><span class="line">			n--;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			n/=<span class="number">10</span>;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">0</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p><span class="math inline">\(ri !\)</span> 连 <span class="math inline">\(Wa\)</span> 三发</p>
 <p>时间到了，算了放在这里，看下一道</p>
+<p><a href>订正</a></p>
 <h2 id="b">$ B $</h2>
 <p><a href="http://codeforces.com/contest/977/problem/b" target="_blank" rel="noopener">Codeforces 977 b</a></p>
+<p>一句话题意：</p>
+<p>给定一个长度为 <span class="math inline">\(n\)</span> 的字符串 <span class="math inline">\(s\)</span> ,找到出现次数最多的连续两个字符</p>
 <p>开 <span class="math inline">\(B\)</span> 发现数据很小，直接暴力找就好了</p>
 <p>复杂度 $O ( n^2) $</p>
 <p>直接贴代码</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maX(a,b) (a&gt;b?a:b)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> miN(a,b) (a&lt;b?a:b)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> x=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">bool</span> f=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">char</span> ch=getchar();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch))</span><br><span class="line">	&#123;</span><br><span class="line">		f^=!(ch^<span class="string">'-'</span>);</span><br><span class="line">		ch=getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch))</span><br><span class="line">	&#123;</span><br><span class="line">		x=((x+(x&lt;&lt;<span class="number">2</span>))&lt;&lt;<span class="number">1</span>)+(ch^<span class="string">'0'</span>);</span><br><span class="line">		ch=getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> f?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> sc[<span class="number">30</span>]=&#123;<span class="number">0</span>&#125;,tot=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		sc[++tot]=x%<span class="number">10</span>;</span><br><span class="line">		x/=<span class="number">10</span>;</span><br><span class="line">	&#125;<span class="keyword">while</span>(x);</span><br><span class="line">	<span class="keyword">while</span>(tot) <span class="built_in">putchar</span>(<span class="string">'0'</span>+sc[tot--]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n,maxn,mn;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n=read();</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> flag=<span class="number">1</span>,sum=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n<span class="number">-1</span>;j++)</span><br><span class="line">			<span class="keyword">if</span>(s[j]!=s[i]||s[j+<span class="number">1</span>]!=s[i+<span class="number">1</span>])</span><br><span class="line">				flag=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				sum++;</span><br><span class="line">		<span class="keyword">if</span>(maxn&lt;sum)</span><br><span class="line">		&#123;</span><br><span class="line">			maxn=sum;</span><br><span class="line">			mn=i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%c%c\n"</span>,s[mn],s[mn+<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href>订正</a></p>
 <h2 id="c">$ C $</h2>
 <p><a href="http://codeforces.com/contest/977/problem/c" target="_blank" rel="noopener">Codeforces 977 c</a></p>
-<p>拿到 $ C $以后，想了一下直接 $ Sort $ 一下就好了，然后。。。。。。 就 $ Wa $ 了 然后就跳掉了</p>
+<p>一句话题意：</p>
+<p>给你一个长度为 <span class="math inline">\(n\)</span> 的整数序列和一个数 <span class="math inline">\(k\)</span> 。</p>
+<p>您应该在 <span class="math inline">\([1 , 1e9]\)</span>（即 $1 x 1e9 $）的范围内输出任何整数 <span class="math inline">\(x\)</span>，使得给定序列的 <span class="math inline">\(k\)</span> 个元素恰好小于或等于x。</p>
+<p>请注意，该序列可以包含相同的元素。</p>
+<p>如果没有这样的<span class="math inline">\(x\)</span>，则输出 <span class="math inline">\(“-1”\)</span>（不含引号）</p>
+<p>拿到 $ C $以后，想了一下直接 $ Sort $ 一下就好了，然后。。。。。。</p>
+<p>就 $ Wa $ 了</p>
+<p>然后就跳掉了</p>
+<p><a href>订正</a></p>
 <h2 id="d">$ D $</h2>
 <p><a href="http://codeforces.com/contest/977/problem/d" target="_blank" rel="noopener">Codeforces 977 d</a></p>
-<p>$ D $ 想了一下 直接将一个数字两次操作后的数字判一下，看是否在数列中，在的话就连边，最后有两个点是只有入变或出边的，最后直接 $ dfs $ 然后写了一发。。。。 又 $ Wa $ 了。。。（长时间不打比赛不太行啊。。。）</p>
+<p>一句话题意：</p>
+<p>给你一个被打乱的序列，每次操作，都要把这个数除以 <span class="math inline">\(3\)</span> 或者乘 <span class="math inline">\(2\)</span> ，</p>
+<p>使之变成下一个数，输出排序后满足条件的原序列数。</p>
+<p>$ D $ 想了一下 直接将一个数字两次操作后的数字判一下，看是否在数列中，在的话就连边，最后有两个点是只有入变或出边的，最后直接 $ dfs $</p>
+<p>然后写了一发。。。。</p>
+<p>又 $ Wa $ 了。。。（长时间不打比赛不太行啊。。。）</p>
+<p><a href>订正</a></p>
 <h2 id="e">$ E $</h2>
 <p><a href="http://codeforces.com/contest/977/problem/e" target="_blank" rel="noopener">Codeforces 977 e</a></p>
-<p>开了 $ E $ ,的第一个反应直接建个图跑就好了 所有边都连边，记录 <span class="math inline">\(du_{i}\)</span> 然后 没有访问过的直接dfs判断是否可以就好了 全场第一次最开心。一边交，一遍 $ Ac $</p>
+<p>一句话题意：</p>
+<p>​​找到所有的单链环的个数 ​</p>
+<p>开了 $ E $ ,的第一个反应直接建个图跑就好了</p>
+<p>所有边都连边，记录 <span class="math inline">\(du_{i}\)</span> 然后 没有访问过的直接dfs判断是否可以就好了</p>
+<p>全场第一次最开心。一边交，一遍 $ Ac $</p>
 <p>然后看了一下时间，觉得开 $ F $ ,没什么希望的</p>
-<p>回去差错</p>
+<p>回去查错</p>
+<p><a href>订正</a></p>
+<h2 id="f">$ F $</h2>
+<p><a href="http://codeforces.com/contest/977/problem/f" target="_blank" rel="noopener">Codeforces 977 F</a></p>
+<p>一句话题意：</p>
+<p>给出一个 <span class="math inline">\(n\)</span> 和 <span class="math inline">\(n\)</span> 个数的序列，然后让你找到满足两个数之间相差为 <span class="math inline">\(1\)</span> 的存在的最长的序列。</p>
+<p>要求输出他们的下标。</p>
+<p>类似于最长上升子序列的 <span class="math inline">\(O(nlogn)\)</span> 的做法。具体看订正</p>
+<p><a href>订正</a></p>
+<p>#查错：</p>
 <p>$ A $ 自己 $ SB $ 直接 $ mod 10$ 就过了</p>
-<p>$ C $ 没有考虑 $ k==0 $的情况 如果 <span class="math inline">\(k==0\)</span> 当前如果 <span class="math inline">\(a_{1}==1\)</span> 直接 <span class="math inline">\(puts(&quot;-1&quot;)\)</span></p>
-<pre><code>              否则 直接输出 $a_{i}-1$ 就过了</code></pre>
+<p>$ C $ 没有考虑 $ k==0 $的情况</p>
+<p>如果 <span class="math inline">\(k==0\)</span> 当前如果 <span class="math inline">\(a_{1}==1\)</span> 直接 <span class="math inline">\(puts(&quot;-1&quot;)\)</span></p>
+<p>否则 直接输出 <span class="math inline">\(a_{i}-1\)</span> 就过了</p>
 <p>$ D $ 没有开 $ double ​$......</p>
 <h1 id="比赛结束-ac-a---e">比赛结束 $AC : A - E $</h1>
 <p>总结：</p>
-<pre><code>1.缺少练习，比赛经验少
-
-2.考虑情况不全面
-
-3.细节不到位，粗心</code></pre>
+<p>1.缺少练习，比赛经验少</p>
+<p>2.考虑情况不全面</p>
+<p>3.细节不到位，粗心</p>
 <h1 id="over">$ Over !$</h1>
 
       
@@ -774,7 +819,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -829,7 +874,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -908,7 +957,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">31</span>
+                      
+                    
+                    <span class="site-state-item-count">32</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1035,7 +1086,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#比赛时间"><span class="nav-number">1.</span> <span class="nav-text">比赛时间：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#a"><span class="nav-number">1.1.</span> <span class="nav-text">$ A $</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b"><span class="nav-number">1.2.</span> <span class="nav-text">$ B $</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c"><span class="nav-number">1.3.</span> <span class="nav-text">$ C $</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d"><span class="nav-number">1.4.</span> <span class="nav-text">$ D $</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#e"><span class="nav-number">1.5.</span> <span class="nav-text">$ E $</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比赛结束-ac-a---e"><span class="nav-number">2.</span> <span class="nav-text">比赛结束 $AC : A - E $</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#over"><span class="nav-number">3.</span> <span class="nav-text">$ Over !$</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#比赛时间"><span class="nav-number">1.</span> <span class="nav-text">比赛时间：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#a"><span class="nav-number">1.1.</span> <span class="nav-text">$ A $</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b"><span class="nav-number">1.2.</span> <span class="nav-text">$ B $</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c"><span class="nav-number">1.3.</span> <span class="nav-text">$ C $</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d"><span class="nav-number">1.4.</span> <span class="nav-text">$ D $</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#e"><span class="nav-number">1.5.</span> <span class="nav-text">$ E $</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#f"><span class="nav-number">1.6.</span> <span class="nav-text">$ F $</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比赛结束-ac-a---e"><span class="nav-number">2.</span> <span class="nav-text">比赛结束 $AC : A - E $</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#over"><span class="nav-number">3.</span> <span class="nav-text">$ Over !$</span></a></li></ol></div>
             
 
           </div>
