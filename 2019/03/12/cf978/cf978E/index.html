@@ -168,7 +168,7 @@
 <meta property="og:site_name" content="Jason_Jie">
 <meta property="og:description" content="\(Codeforces 978E\) 题解： 978E 题意： ​ ​ ​共 \(N\) 站，汽车每站变化 \(a_i\) 人。问刚开始汽车上人数有多少种可能？ ​">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-12T12:00:16.000Z">
+<meta property="og:updated_time" content="2019-04-17T01:41:14.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 978 E">
 <meta name="twitter:description" content="\(Codeforces 978E\) 题解： 978E 题意： ​ ​ ​共 \(N\) 站，汽车每站变化 \(a_i\) 人。问刚开始汽车上人数有多少种可能？ ​">
@@ -500,12 +500,24 @@
                 
               
 
-              <time title="Created: 2019-03-12 13:14:42 / Modified: 20:00:16" itemprop="dateCreated datePublished" datetime="2019-03-12T13:14:42+08:00">2019-03-12</time>
+              <time title="Created: 2019-03-12 13:14:42" itemprop="dateCreated datePublished" datetime="2019-03-12T13:14:42+08:00">2019-03-12</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-17 09:41:14" itemprop="dateModified" datetime="2019-04-17T09:41:14+08:00">2019-04-17</time>
               
             
           </span>
@@ -536,7 +548,14 @@
                   , 
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Contest/Codeforces/978/" itemprop="url" rel="index"><span itemprop="name">978</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Contest/Codeforces/Div3/" itemprop="url" rel="index"><span itemprop="name">Div3</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Contest/Codeforces/Div3/978-Finished/" itemprop="url" rel="index"><span itemprop="name">978 Finished</span></a></span>
 
                 
                 
@@ -583,7 +602,10 @@
 <p>题意： ​ ​ ​共 <span class="math inline">\(N\)</span> 站，汽车每站变化 <span class="math inline">\(a_i\)</span> 人。问刚开始汽车上人数有多少种可能？ ​</p>
 <a id="more"></a>
 <p>思考：</p>
-<p>因为是变化值，所以相当于差分了一下，先做一遍前缀和，变成每个车站当前有多少人。然后排序前缀和数组。<span class="math inline">\(- sum_1\)</span> 就是最少的人数边界 <span class="math inline">\(w - sum_n\)</span> 就是最多的人数边界 最 <span class="math inline">\(ans\)</span> 就是两者相减</p>
+<p>因为是变化值，所以相当于差分了一下，先做一遍前缀和，变成每个车站当前有多少人。然后排序前缀和数组。</p>
+<p><span class="math inline">\(- sum_1\)</span> 就是最少的人数边界</p>
+<p><span class="math inline">\(w - sum_n\)</span> 就是最多的人数边界</p>
+<p><span class="math inline">\(ans\)</span> 就是两者相减</p>
 <p>注意： 做处理的时候有可能是单调，也就是说一直下车或者一直上车</p>
 <p>最小边界要做处理： <span class="math inline">\(minn=max(-sum_i , 0)\)</span></p>
 <p>最大边界要做处理： <span class="math inline">\(maxn=minn(w,w-sum[n])\)</span></p>
@@ -663,8 +685,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/12/cf977/cf977f/" rel="next" title="Codeforces 977 F">
-                <i class="fa fa-chevron-left"></i> Codeforces 977 F
+              <a href="/2019/03/12/cf978/cf978/" rel="next" title="Codeforces 978 VP 总结">
+                <i class="fa fa-chevron-left"></i> Codeforces 978 VP 总结
               </a>
             
           </div>
@@ -673,8 +695,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/12/cf978/cf978g/" rel="prev" title="Codeforces 978 G">
-                Codeforces 978 G <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/12/组合数学引论-绪论/" rel="prev" title="组合数学引论-绪论">
+                组合数学引论-绪论 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
