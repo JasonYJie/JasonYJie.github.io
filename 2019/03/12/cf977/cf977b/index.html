@@ -161,14 +161,14 @@
 
 
   <meta name="description" content="\(Codeforces 977 B\) 题解： 977B 题意： 给定一个长度为 \(n\) 的字符串 \(s\) ,找到出现次数最多的连续两个字符 ​">
-<meta name="keywords" content="Codeforces,题解,暴力,lv0">
+<meta name="keywords" content="Codeforces,题解,lv0,暴力">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces 977 B">
 <meta property="og:url" content="https://jasonyjie.github.io/2019/03/12/cf977/cf977b/index.html">
 <meta property="og:site_name" content="Jason_Jie">
 <meta property="og:description" content="\(Codeforces 977 B\) 题解： 977B 题意： 给定一个长度为 \(n\) 的字符串 \(s\) ,找到出现次数最多的连续两个字符 ​">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-17T01:03:07.761Z">
+<meta property="og:updated_time" content="2019-04-22T01:10:24.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 977 B">
 <meta name="twitter:description" content="\(Codeforces 977 B\) 题解： 977B 题意： 给定一个长度为 \(n\) 的字符串 \(s\) ,找到出现次数最多的连续两个字符 ​">
@@ -517,7 +517,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-17 09:03:07" itemprop="dateModified" datetime="2019-04-17T09:03:07+08:00">2019-04-17</time>
+                <time title="Modified: 2019-04-22 09:10:24" itemprop="dateModified" datetime="2019-04-22T09:10:24+08:00">2019-04-22</time>
               
             
           </span>
@@ -605,6 +605,8 @@
 <p>复杂度 <span class="math inline">\(O(n^2)\)</span></p>
 <p>更新的时候连带位置进行更新</p>
 <p>2019-04-17: 现在看自己的代码好丑。。。。。明明可以 <span class="math inline">\(O(nlogn)\)</span> 的复杂度，偏要麻烦一点</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt;mp;</span><br><span class="line"><span class="built_in">string</span> ans,s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,max=<span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;s;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;s.size();++i) mp[s.substr(i<span class="number">-1</span>,<span class="number">2</span>)]++;<span class="comment">//s.substr（i-1,2）函数是从s中从i-1个字符开始取出长为2的串</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span>&amp;x:mp) <span class="keyword">if</span>(x.second&gt;max) ans=x.first,max=x.second;<span class="comment">//遍历map，更新ans</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>比赛代码</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maX(a,b) (a&gt;b?a:b)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> miN(a,b) (a&lt;b?a:b)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">int</span> x=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">bool</span> f=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch))</span><br><span class="line">    &#123;</span><br><span class="line">        f^=!(ch^<span class="string">'-'</span>);</span><br><span class="line">        ch=getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch))</span><br><span class="line">    &#123;</span><br><span class="line">        x=((x+(x&lt;&lt;<span class="number">2</span>))&lt;&lt;<span class="number">1</span>)+(ch^<span class="string">'0'</span>);</span><br><span class="line">        ch=getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">int</span> sc[<span class="number">30</span>]=&#123;<span class="number">0</span>&#125;,tot=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        sc[++tot]=x%<span class="number">10</span>;</span><br><span class="line">        x/=<span class="number">10</span>;</span><br><span class="line">    &#125;<span class="keyword">while</span>(x);</span><br><span class="line">    <span class="keyword">while</span>(tot) <span class="built_in">putchar</span>(<span class="string">'0'</span>+sc[tot--]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n,maxn,mn;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n=read();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> flag=<span class="number">1</span>,sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n<span class="number">-1</span>;j++)</span><br><span class="line">            <span class="keyword">if</span>(s[j]!=s[i]||s[j+<span class="number">1</span>]!=s[i+<span class="number">1</span>])</span><br><span class="line">                flag=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                sum++;</span><br><span class="line">        <span class="keyword">if</span>(maxn&lt;sum)</span><br><span class="line">        &#123;</span><br><span class="line">            maxn=sum;</span><br><span class="line">            mn=i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%c%c\n"</span>,s[mn],s[mn+<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -662,9 +664,9 @@
           
             <a href="/tags/题解/" rel="tag"># 题解</a>
           
-            <a href="/tags/暴力/" rel="tag"># 暴力</a>
-          
             <a href="/tags/lv0/" rel="tag"># lv0</a>
+          
+            <a href="/tags/暴力/" rel="tag"># 暴力</a>
           
         </div>
       
@@ -677,8 +679,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/12/组合数学引论-绪论/" rel="next" title="组合数学引论-绪论">
-                <i class="fa fa-chevron-left"></i> 组合数学引论-绪论
+              <a href="/2019/03/12/cf978/cf978c/" rel="next" title="Codeforces 978 C">
+                <i class="fa fa-chevron-left"></i> Codeforces 978 C
               </a>
             
           </div>
@@ -687,8 +689,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/12/cf978/cf978b/" rel="prev" title="Codeforces 978 B">
-                Codeforces 978 B <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/13/cf988/cf988vp/" rel="prev" title="Codeforces 988 VP 小结">
+                Codeforces 988 VP 小结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
